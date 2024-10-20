@@ -47,7 +47,7 @@
     "Id": "1492361653",
     "Type": "User",
     "Language": "SFX",
-    "Hash": "{40BE60B6-A8F1-5CE1-AE54-7833A7E6E8A4}",
+    "Hash": "{6904FF18-5D91-2881-09CE-D5A6BF289E15}",
     "ShortName": "Sounds",
     "Path": "Sounds.bnk",
     "Media": [
@@ -382,6 +382,6 @@
     ]
    }
   ],
-  "FileHash": "{3050DD29-27F7-C924-D134-8F6E4676918F}"
+  "FileHash": "{C059A3F0-08DA-5C18-2C5F-3D71E7B439A5}"
  }
 }

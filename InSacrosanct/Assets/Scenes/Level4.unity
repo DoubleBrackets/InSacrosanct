@@ -1716,7 +1716,7 @@ MonoBehaviour:
   _bank:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 868db59866bcb47dab83d7b38abdae3f, type: 2}
 --- !u!4 &215469900
 Transform:
   m_ObjectHideFlags: 0
