@@ -49,6 +49,42 @@
 								</Action>
 							</ChildrenList>
 						</Event>
+						<Event Name="playDeath" ID="{2191CF3F-1D74-46E1-B2DC-CC3D73EED0F7}">
+							<ChildrenList>
+								<Action Name="" ID="{23F9F485-1E04-4E8F-86C8-6BB8611F3791}" ShortID="838935059">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Death" ID="{8F73B306-5FAC-4E9B-BC02-585A7ED75E3D}" WorkUnitID="{12B32864-9494-4D7A-A8B7-B27E01B926F9}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="playWallslide" ID="{9A54E742-8E93-4A69-A500-06B2B1EB74DD}">
+							<ChildrenList>
+								<Action Name="" ID="{B50AD65C-4D94-4BC0-90AA-A23BCE974D9F}" ShortID="42358271">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Wallside" ID="{2781B6AC-737C-45E3-BF37-BE56F560A565}" WorkUnitID="{12B32864-9494-4D7A-A8B7-B27E01B926F9}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="stopWallslide" ID="{CF17B8CF-F8A3-45F1-B408-724E650A075F}">
+							<ChildrenList>
+								<Action Name="" ID="{DD41EA0A-549A-46DD-A197-2D5B7367C6A5}" ShortID="974484198">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Wallside" ID="{2781B6AC-737C-45E3-BF37-BE56F560A565}" WorkUnitID="{12B32864-9494-4D7A-A8B7-B27E01B926F9}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>

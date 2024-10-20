@@ -1,13 +1,15 @@
 Event	ID	Name			Wwise Object Path	Notes
+	187405210	playWallslide			\Default Work Unit\Sounds\playWallslide	
 	277487121	playMainMusic			\Default Work Unit\Sounds\playMainMusic	
 	1712852617	playFootstep			\Default Work Unit\Sounds\playFootstep	
 	1717476791	playJump			\Default Work Unit\Sounds\playJump	
 	1808398206	playTutorialMusic			\Default Work Unit\Sounds\playTutorialMusic	
+	2429347612	stopWallslide			\Default Work Unit\Sounds\stopWallslide	
+	2840201783	playDeath			\Default Work Unit\Sounds\playDeath	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	10651075	FEETHmn_HighHeels Concrete-Run 04 Composite_AKB00M_Footstep	Y:\Desktop\GitHub\InSacrosanct\InSacrosanct\InSacrosanct_WwiseProject\.cache\Mac\SFX\FEETHmn_HighHeels Concrete-Run 04 Composite_AKB00M_Footstep_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footstep\FEETHmn_HighHeels Concrete-Run 04 Composite_AKB00M_Footstep		28214
 	50913498	HornPt2	Y:\Desktop\GitHub\InSacrosanct\InSacrosanct\InSacrosanct_WwiseProject\.cache\Mac\SFX\HornSlowPt2_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Main Music\MusicBaseLoop\HornPt2		7939128
-	52756148	Jump 3	Y:\Desktop\GitHub\InSacrosanct\InSacrosanct\InSacrosanct_WwiseProject\.cache\Mac\SFX\Jump 4_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Jump\Jump 3		288160
 	69265141	Jump 1	Y:\Desktop\GitHub\InSacrosanct\InSacrosanct\InSacrosanct_WwiseProject\.cache\Mac\SFX\Jump 1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Jump\Jump 1		288160
 	141143672	HornPt1	Y:\Desktop\GitHub\InSacrosanct\InSacrosanct\InSacrosanct_WwiseProject\.cache\Mac\SFX\HornFastPt1_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Main Music\MusicBaseLoop\HornPt1		8912992
 	181063264	FEETHmn_HighHeels Concrete-Run 06 Composite_AKB00M_Footstep	Y:\Desktop\GitHub\InSacrosanct\InSacrosanct\InSacrosanct_WwiseProject\.cache\Mac\SFX\FEETHmn_HighHeels Concrete-Run 06 Composite_AKB00M_Footstep_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footstep\FEETHmn_HighHeels Concrete-Run 06 Composite_AKB00M_Footstep		29988
@@ -21,4 +23,6 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	654757637	HornPt2	Y:\Desktop\GitHub\InSacrosanct\InSacrosanct\InSacrosanct_WwiseProject\.cache\Mac\SFX\HornFastPt2_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Main Music\MusicBaseLoop\HornPt2		7930776
 	708222936	FEETHmn_HighHeels Concrete-Run 02 Composite_AKB00M_Footstep	Y:\Desktop\GitHub\InSacrosanct\InSacrosanct\InSacrosanct_WwiseProject\.cache\Mac\SFX\FEETHmn_HighHeels Concrete-Run 02 Composite_AKB00M_Footstep_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Footstep\FEETHmn_HighHeels Concrete-Run 02 Composite_AKB00M_Footstep		30430
 	880027887	HornPt1	Y:\Desktop\GitHub\InSacrosanct\InSacrosanct\InSacrosanct_WwiseProject\.cache\Mac\SFX\HornSlowPt1_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Main Music\MusicBaseLoop\HornPt1		8912992
+	889889250	Wallside	Y:\Desktop\GitHub\InSacrosanct\InSacrosanct\InSacrosanct_WwiseProject\.cache\Mac\SFX\Wallside Looping_1F5F47D8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Wallside		1975540
+	1058052428	Death	Y:\Desktop\GitHub\InSacrosanct\InSacrosanct\InSacrosanct_WwiseProject\.cache\Mac\SFX\Death_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Death		2618528
 

@@ -135,5 +135,7 @@ public class Protag : MonoBehaviour, ILocatableService
         _state = ProtagState.Dead;
         _coreService.Instance.Death(deathTimeline);
         _gearHandler.UnequipGear();
+
+        AkSoundEngine.PostEvent("playDeath", gameObject);
     }
 }

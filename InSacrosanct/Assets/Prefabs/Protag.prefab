@@ -81,7 +81,7 @@ MonoBehaviour:
   _cameraTransform: {fileID: 3754519502070763107}
   _cinemachineCamera: {fileID: 1938213931851893653}
   _cameraSettings:
-    Sensitivity: 4
+    Sensitivity: 50
     MinTiltDegrees: -90
     MaxTiltDegrees: 90
 --- !u!114 &878950687503259385
@@ -226,6 +226,7 @@ MonoBehaviour:
     SurfDebounceTime: 0.5
     SurfEnterSpeedRequirement: 17
     SurfMaintainSpeedRequirement: 8
+  footstepDelay: 0.2
 --- !u!1 &3663311537928355843
 GameObject:
   m_ObjectHideFlags: 0

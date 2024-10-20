@@ -51,6 +51,7 @@ public class MoveController : MonoBehaviour
 
         public float SurfEnterSpeedRequirement;
         public float SurfMaintainSpeedRequirement;
+
     }
 
     [Header("Dependencies")]
@@ -62,6 +63,8 @@ public class MoveController : MonoBehaviour
 
     [SerializeField]
     private MoveSettings _moveSettings;
+    private float timer;
+    private bool isSurfPlaying;
 
     private bool IsGrounded => (_characterController.isGrounded || _castGround) && _forceUngroundTimer <= 0f;
     public bool IsSurfing { get; private set; }
@@ -92,6 +95,9 @@ public class MoveController : MonoBehaviour
     private bool _wasSurfing;
 
     private float _surfDebounceTimer;
+
+    [Header("Audio Settings")]
+    public float footstepDelay;
 
     private void Awake()
     {
@@ -229,10 +235,12 @@ public class MoveController : MonoBehaviour
             if (IsGrounded)
             {
                 _velocity.y = Mathf.Sqrt(_moveSettings.JumpHeight * -2f * _moveSettings.Gravity);
+                AkSoundEngine.PostEvent("playJump", gameObject);
             }
             else if (IsSurfing)
             {
                 _surfDebounceTimer = _moveSettings.SurfDebounceTime;
+                AkSoundEngine.PostEvent("playJump", gameObject);
             }
 
             _forceUngroundTimer = 0.1f;
@@ -255,6 +263,27 @@ public class MoveController : MonoBehaviour
         _wasGrounded = IsGrounded;
         _characterController.Move(_velocity * Time.deltaTime);
         _velocity = _characterController.velocity;
+
+        //Play footstep sounds
+        if (moveInput != Vector3.zero && IsGrounded)
+        {
+            timer += Time.deltaTime;
+
+            if (timer > footstepDelay)
+            {
+                AkSoundEngine.PostEvent("playFootstep", gameObject);
+                timer = 0f;
+            }
+        }
+
+        if(IsSurfing && !isSurfPlaying)
+        {
+            AkSoundEngine.PostEvent("playWallslide", gameObject);
+            isSurfPlaying = true;
+        } else if (!IsSurfing && isSurfPlaying)
+        {
+            AkSoundEngine.PostEvent("stopWallslide", gameObject);
+        }
     }
 
     private string DebugString()

@@ -47,7 +47,7 @@
     "Id": "1492361653",
     "Type": "User",
     "Language": "SFX",
-    "Hash": "{B5498FD6-BDC9-171E-65B5-7AE5E3809121}",
+    "Hash": "{B24979CA-D00D-EBEE-A20E-C93991E516AF}",
     "ShortName": "Sounds",
     "Path": "Sounds.bnk",
     "Media": [
@@ -66,14 +66,6 @@
       "Location": "Memory",
       "ShortName": "HornSlowPt2.wav",
       "CachePath": "SFX/HornSlowPt2_FBC78EF0.wem"
-     },
-     {
-      "Id": "52756148",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Jump 4.wav",
-      "CachePath": "SFX/Jump 4_818F3B66.wem"
      },
      {
       "Id": "69265141",
@@ -178,9 +170,37 @@
       "Location": "Memory",
       "ShortName": "HornSlowPt1.wav",
       "CachePath": "SFX/HornSlowPt1_FBC78EF0.wem"
+     },
+     {
+      "Id": "889889250",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Wallside Looping.wav",
+      "CachePath": "SFX/Wallside Looping_1F5F47D8.wem"
+     },
+     {
+      "Id": "1058052428",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Death.wav",
+      "CachePath": "SFX/Death_818F3B66.wem"
      }
     ],
     "Events": [
+     {
+      "Id": "2840201783",
+      "Name": "playDeath",
+      "DurationType": "OneShot",
+      "DurationMin": "13.637333",
+      "DurationMax": "13.637333",
+      "MediaRefs": [
+       {
+        "Id": "1058052428"
+       }
+      ]
+     },
      {
       "Id": "1712852617",
       "Name": "playFootstep",
@@ -215,9 +235,6 @@
       "DurationMin": "1.5",
       "DurationMax": "1.5",
       "MediaRefs": [
-       {
-        "Id": "52756148"
-       },
        {
         "Id": "69265141"
        },
@@ -260,10 +277,28 @@
         "Id": "539017146"
        }
       ]
+     },
+     {
+      "Id": "187405210",
+      "Name": "playWallslide",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "889889250"
+       }
+      ]
+     },
+     {
+      "Id": "2429347612",
+      "Name": "stopWallslide",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
      }
     ]
    }
   ],
-  "FileHash": "{99392ED7-0E00-534F-7159-6C03DD2B675B}"
+  "FileHash": "{6166AEF5-ECD3-1BD7-D5DE-511DA3764EAE}"
  }
 }

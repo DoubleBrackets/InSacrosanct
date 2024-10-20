@@ -69,7 +69,7 @@
 						<ActiveSource Name="Grapple Fire" ID="{2567D9AF-5045-459B-A9FA-9E12A241BA71}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
-				<Sound Name="Wallside Looping" ID="{2781B6AC-737C-45E3-BF37-BE56F560A565}" ShortID="996841000">
+				<Sound Name="Wallside" ID="{2781B6AC-737C-45E3-BF37-BE56F560A565}" ShortID="996841000">
 					<PropertyList>
 						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
 					</PropertyList>
@@ -198,28 +198,6 @@
 								<ActiveSource Name="Jump 2" ID="{C9022A73-05E4-4A35-94C8-A79373F0AAE9}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
-						<Sound Name="Jump 3" ID="{90FB6D67-E82E-4D5C-B5D1-E1EA6FD14A28}" ShortID="837634212">
-							<ReferenceList>
-								<Reference Name="Conversion">
-									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B989FA84-7907-4F37-9BC7-1D121F6B1CB6}"/>
-								</Reference>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{164F1ABA-2E16-4997-A399-827FF5423095}"/>
-								</Reference>
-							</ReferenceList>
-							<ChildrenList>
-								<AudioFileSource Name="Jump 4" ID="{7548CC0B-6464-4A63-9229-9229F8E8B7D7}">
-									<Language>SFX</Language>
-									<AudioFile>Jump 4.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="52756148"/>
-									</MediaIDList>
-								</AudioFileSource>
-							</ChildrenList>
-							<ActiveSourceList>
-								<ActiveSource Name="Jump 4" ID="{7548CC0B-6464-4A63-9229-9229F8E8B7D7}" Platform="Linked"/>
-							</ActiveSourceList>
-						</Sound>
 					</ChildrenList>
 				</RandomSequenceContainer>
 				<RandomSequenceContainer Name="Footstep" ID="{47FF1605-842E-463F-BA43-F5F8550C77B2}" ShortID="753331505">
@@ -243,6 +221,9 @@
 							</ModifierList>
 						</Property>
 						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-8</Value>
+							</ValueList>
 							<ModifierList>
 								<ModifierInfo>
 									<Modifier Name="" ID="{0653294E-FDA2-4362-9DA5-A7777BAC49DF}">
