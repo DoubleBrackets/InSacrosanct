@@ -14167,18 +14167,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: WormGod
       objectReference: {fileID: 0}
-    - target: {fileID: 8346353376839173185, guid: 24018582736f9e444abf72d3ac313e87, type: 3}
-      propertyPath: _config.ShakeMinRange
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 8346353376839173185, guid: 24018582736f9e444abf72d3ac313e87, type: 3}
-      propertyPath: _config.SteeringForce
-      value: 26
-      objectReference: {fileID: 0}
-    - target: {fileID: 8346353376839173185, guid: 24018582736f9e444abf72d3ac313e87, type: 3}
-      propertyPath: _config.MaxSteeringAngle
-      value: 34
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14473,29 +14461,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 878950687503259385, guid: 8c8c65b40cf4a2440b7cab5ddd9a77cb, type: 3}
-      propertyPath: _wormImpulseCurve.m_Curve.Array.data[0].inSlope
-      value: -0.062126093
+    - target: {fileID: 1528006346233219964, guid: 8c8c65b40cf4a2440b7cab5ddd9a77cb, type: 3}
+      propertyPath: _moveSettings.SurfCastDist
+      value: 3
       objectReference: {fileID: 0}
-    - target: {fileID: 878950687503259385, guid: 8c8c65b40cf4a2440b7cab5ddd9a77cb, type: 3}
-      propertyPath: _wormImpulseCurve.m_Curve.Array.data[1].inSlope
-      value: 2.8301868
+    - target: {fileID: 1528006346233219964, guid: 8c8c65b40cf4a2440b7cab5ddd9a77cb, type: 3}
+      propertyPath: _moveSettings.SurfSurfaceAngleRange
+      value: 30
       objectReference: {fileID: 0}
-    - target: {fileID: 878950687503259385, guid: 8c8c65b40cf4a2440b7cab5ddd9a77cb, type: 3}
-      propertyPath: _wormImpulseCurve.m_Curve.Array.data[0].outSlope
-      value: -0.062126093
-      objectReference: {fileID: 0}
-    - target: {fileID: 878950687503259385, guid: 8c8c65b40cf4a2440b7cab5ddd9a77cb, type: 3}
-      propertyPath: _wormImpulseCurve.m_Curve.Array.data[1].inWeight
-      value: 0.041666687
-      objectReference: {fileID: 0}
-    - target: {fileID: 878950687503259385, guid: 8c8c65b40cf4a2440b7cab5ddd9a77cb, type: 3}
-      propertyPath: _wormImpulseCurve.m_Curve.Array.data[1].outSlope
-      value: 2.8301868
-      objectReference: {fileID: 0}
-    - target: {fileID: 878950687503259385, guid: 8c8c65b40cf4a2440b7cab5ddd9a77cb, type: 3}
-      propertyPath: _wormImpulseCurve.m_Curve.Array.data[0].outWeight
-      value: 0.34166667
+    - target: {fileID: 1528006346233219964, guid: 8c8c65b40cf4a2440b7cab5ddd9a77cb, type: 3}
+      propertyPath: _moveSettings.SurfInitiateAngleRange
+      value: 65
       objectReference: {fileID: 0}
     - target: {fileID: 2050152887279073161, guid: 8c8c65b40cf4a2440b7cab5ddd9a77cb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14536,10 +14512,6 @@ PrefabInstance:
     - target: {fileID: 2050152887279073161, guid: 8c8c65b40cf4a2440b7cab5ddd9a77cb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3684350150178230819, guid: 8c8c65b40cf4a2440b7cab5ddd9a77cb, type: 3}
-      propertyPath: DefaultVelocity.y
-      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 7228396605427804334, guid: 8c8c65b40cf4a2440b7cab5ddd9a77cb, type: 3}
       propertyPath: m_Name

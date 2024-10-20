@@ -211,13 +211,13 @@ MonoBehaviour:
       m_Bits: 64
     GroundSweepOrigin: {fileID: 7409473109909816388}
     SurfRaycastCenter: {fileID: 5488190822765481052}
-    SurfCastDist: 2.5
+    SurfCastDist: 3
     SurfMask:
       serializedVersion: 2
       m_Bits: 64
-    SurfSurfaceAngleRange: 25
+    SurfSurfaceAngleRange: 30
     SurfGravity: -25
-    SurfInitiateAngleRange: 50
+    SurfInitiateAngleRange: 65
     SurfSteeringSpeed: 70
     SurfJumpHeight: 2.5
     SurfStickForce: 15
