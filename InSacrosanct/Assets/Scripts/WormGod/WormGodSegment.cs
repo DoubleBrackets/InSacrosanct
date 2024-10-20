@@ -30,6 +30,12 @@ public class WormGodSegment : MonoBehaviour, IKillable
 
     public bool Alive { get; private set; } = true;
 
+    public Quaternion Rotation
+    {
+        get => transform.rotation;
+        set => transform.rotation = value;
+    }
+
     private readonly Collider[] _results = new Collider[1];
 
     private bool _didUpdateInTerrainThisFrame;
@@ -101,5 +107,6 @@ public class WormGodSegment : MonoBehaviour, IKillable
         _settings.FinalDeathParticles.Play();
         _settings.DeadVisuals.SetActive(false);
         _settings.AliveVisuals.SetActive(false);
+        AnchorPoint.gameObject.SetActive(false);
     }
 }

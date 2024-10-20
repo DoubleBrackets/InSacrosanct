@@ -19,6 +19,8 @@ public class FpCamera : MonoBehaviour
         public float MaxTiltDegrees;
     }
 
+    public static float Sensitivity = 30f;
+
     [Header("Dependencies")]
 
     [SerializeField]
@@ -52,14 +54,14 @@ public class FpCamera : MonoBehaviour
     {
         Look(lookInput);
 
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-            _cameraSettings.Sensitivity += 0.2f;
+            Sensitivity -= 5f;
         }
 
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            _cameraSettings.Sensitivity -= 0.2f;
+            Sensitivity += 5f;
         }
     }
 
@@ -70,8 +72,9 @@ public class FpCamera : MonoBehaviour
 
     private void Look(Vector2 lookInput)
     {
-        float mouseX = lookInput.x * _cameraSettings.Sensitivity * Time.deltaTime;
-        float mouseY = lookInput.y * _cameraSettings.Sensitivity * Time.deltaTime;
+        float dTime = Mathf.Clamp(Time.deltaTime, 0, 0.05f);
+        float mouseX = lookInput.x * Sensitivity * dTime;
+        float mouseY = lookInput.y * Sensitivity * dTime;
 
         _xRotation -= mouseY;
         _xRotation = Mathf.Clamp(_xRotation, _cameraSettings.MinTiltDegrees, _cameraSettings.MaxTiltDegrees);

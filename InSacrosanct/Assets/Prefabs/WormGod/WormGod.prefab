@@ -46,15 +46,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _segmentPrefab: {fileID: 1773020240224448217, guid: 9a753a6185372174e8bb4a377a6fdf93, type: 3}
   _headPrefab: {fileID: 1773020240224448217, guid: ec05f2fcacc72ef4b8c4861ab06a3cbf, type: 3}
-  _tailPrefab: {fileID: 1773020240224448217, guid: 9a753a6185372174e8bb4a377a6fdf93, type: 3}
+  _tailPrefab: {fileID: 1773020240224448217, guid: f3a7275871bdb0c48ae7a828566a4348, type: 3}
   _serviceLocator: {fileID: 11400000, guid: d925fe932aee41c4987eaf483d9a66ee, type: 2}
   _config:
     SegmentDistanceConstraint: 30
     SegmentAngleConstraint: 0
-    SegmentCount: 25
-    SteeringForce: 25
+    SegmentCount: 23
+    SteeringForce: 27
     MaxSteeringAngle: 31
-    TopSpeed: 70
+    TopSpeed: 85
     GravityAccel: -25
     TargetOffset: {x: 0, y: 11, z: 0}
     ShakeMaxRange: 180

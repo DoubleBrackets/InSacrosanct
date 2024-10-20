@@ -11,7 +11,7 @@ public class ContactDeath : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         var protag = other.GetComponentInParent<Protag>();
-        if (!_ended && protag && enabled)
+        if (!_ended && protag && enabled && gameObject.activeInHierarchy)
         {
             _ended = true;
             protag.Kill(_deathTimeline);

@@ -101,6 +101,9 @@ public class WormGodAI : MonoBehaviour
         }
 
         Steering();
+
+        _head.Rotation = Quaternion.LookRotation(_headVelocity, Vector3.up);
+
         ResolveBodySegments();
         Effects();
     }
