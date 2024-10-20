@@ -667,6 +667,11 @@
 				<MusicPlaylistContainer Name="Tutorial Music" ID="{F8A22AC9-D7B8-4713-A985-B2222F3BE8E8}" ShortID="556691613">
 					<PropertyList>
 						<Property Name="Tempo" Type="Real64" Value="132"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-12</Value>
+							</ValueList>
+						</Property>
 					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">

@@ -1358,7 +1358,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2603a6c2f4073541a1102a41a1d2aac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _track: 1
+  _track: 2
+  _bank:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 868db59866bcb47dab83d7b38abdae3f, type: 2}
 --- !u!4 &215469900
 Transform:
   m_ObjectHideFlags: 0

@@ -667,7 +667,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2820881333772852277}
-  - component: {fileID: 380475584370024649}
   - component: {fileID: 4430431680610947981}
   m_Layer: 0
   m_Name: AudioManager
@@ -691,31 +690,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3011700038056178487}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &380475584370024649
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7128995851904455581}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c1bfd33515ac4a7bb4efdd4d7f9deca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerList: f7e1664c
-  useOtherObject: 0
-  data:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 868db59866bcb47dab83d7b38abdae3f, type: 2}
-  decodeBank: 0
-  overrideLoadSetting: 0
-  loadAsynchronous: 0
-  saveDecodedBank: 0
-  unloadTriggerList: 958ca0ea
-  bankNameInternal: 
-  valueGuidInternal: 
 --- !u!114 &4430431680610947981
 MonoBehaviour:
   m_ObjectHideFlags: 0
