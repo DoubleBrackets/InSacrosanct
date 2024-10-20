@@ -13,6 +13,7 @@ public class WormGodSegment : MonoBehaviour, IKillable
         public GameObject AliveVisuals;
         public GameObject DeadVisuals;
         public ParticleSystem FinalDeathParticles;
+        public Transform LookAtTarget;
     }
 
     [SerializeField]
@@ -85,9 +86,14 @@ public class WormGodSegment : MonoBehaviour, IKillable
         return _isInTerrain;
     }
 
-    public void Tick()
+    public void Tick(Vector3 target)
     {
         _didUpdateInTerrainThisFrame = false;
+
+        if (Alive && _settings.LookAtTarget != null)
+        {
+            _settings.LookAtTarget.LookAt(target);
+        }
     }
 
     public void FinalDeath()

@@ -246,7 +246,7 @@ MonoBehaviour:
     GrappleRange: 175
     GrappleCooldown: 0
     PullForce: 5
-    MinDistance: 5
+    MinDistance: 1
     GrappleMask:
       serializedVersion: 2
       m_Bits: 64

@@ -83,11 +83,11 @@ public class WormGodAI : MonoBehaviour
             return;
         }
 
-        _head.Tick();
+        _head.Tick(_protag.Instance.Pos);
         var finalDeath = true;
         foreach (WormGodSegment segment in _bodySegments)
         {
-            segment.Tick();
+            segment.Tick(_protag.Instance.Pos);
             if (segment.Killable && segment.Alive)
             {
                 finalDeath = false;

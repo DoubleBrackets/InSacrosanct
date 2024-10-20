@@ -6,9 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Level1.unity
+    guid: 8f27f042d1069074ca985055db934188
+  - enabled: 1
+    path: Assets/Scenes/Level2.unity
+    guid: 24340ffe100f65442a2c106faded7dc0
+  - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: 75b36f3e552830f4eaf6b68c5756a9f3
+  - enabled: 0
     path: Assets/Scenes/1 - Basics.unity
     guid: fd46a49309408f64398600ca0640753e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/3 - Shattered Core.unity
     guid: b9446a230a3275b43b602a79436a9027
   m_configObjects:
