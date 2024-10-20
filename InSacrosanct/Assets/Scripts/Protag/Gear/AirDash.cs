@@ -36,11 +36,7 @@ public class AirDash : GearBase
             inputRaw = Vector2.up;
         }
 
-        Vector3 direction = Vector3
-            .ProjectOnPlane(
-                Protag.FpCamera.TransformDirection(new Vector3(inputRaw.x, 0, inputRaw.y)),
-                Vector3.up)
-            .normalized;
+        Vector3 direction = Protag.FpCamera.TransformDirection(new Vector3(inputRaw.x, 0, inputRaw.y)).normalized;
 
         if (Input.GetMouseButtonDown(0) && !Protag.MoveController.IsSurfing)
         {
@@ -51,11 +47,6 @@ public class AirDash : GearBase
 
                 Vector3 oldVelocity = Protag.MoveController.Velocity;
                 Vector3 newVelocity = direction * _dashSpeed;
-
-                if (oldVelocity.y > 0)
-                {
-                    newVelocity.y = oldVelocity.y;
-                }
 
                 Protag.MoveController.Velocity = newVelocity;
                 _dashTime = Time.time + _dashCooldown;

@@ -145,9 +145,25 @@ public class MoveController : MonoBehaviour
 
             Vector3 hVelocity = Vector3.ProjectOnPlane(_velocity, _groundNormal);
 
-            float finalAccel = Vector3.Dot(hVelocity, desiredHVel) <= 0
-                ? IsGrounded ? _moveSettings.Friction : 0
-                : _moveSettings.Acceleration;
+            bool isMovingTowards = Vector3.Dot(hVelocity, desiredHVel) > 0;
+            float finalAccel = isMovingTowards
+                ? _moveSettings.Acceleration
+                : _moveSettings.Friction;
+
+            // Prevent slowing down in the air
+            if (!IsGrounded)
+            {
+                bool noInput = rawInput == Vector2.zero;
+                if (noInput)
+                {
+                    finalAccel = 0;
+                }
+
+                if (desiredHVel.sqrMagnitude < hVelocity.sqrMagnitude && isMovingTowards)
+                {
+                    desiredHVel = desiredHVel.normalized * hVelocity.magnitude;
+                }
+            }
 
             Vector3 newHVel = Vector3.Lerp(
                 hVelocity,

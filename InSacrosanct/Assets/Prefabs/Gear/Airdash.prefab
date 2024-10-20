@@ -4991,7 +4991,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 976758f7bfa715142843f14e40361fde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dashSpeed: 60
+  _dashSpeed: 45
   _dashCooldown: 2
   _visuals: {fileID: 1425400778347290909}
   _animator: {fileID: 5049645123828039997}

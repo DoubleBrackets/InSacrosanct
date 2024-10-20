@@ -23,7 +23,7 @@ public class GrappleHook : GearBase
     private GrappleSettings _settings;
 
     [SerializeField]
-    public Animator _animator;
+    private Animator _animator;
 
     [SerializeField]
     private GameObject _visuals;
@@ -32,6 +32,19 @@ public class GrappleHook : GearBase
     private Vector3 _grappleHoveringTarget;
 
     private bool _grappling;
+
+    private Collider _hit;
+
+    private void Awake()
+    {
+        DebugHUD.AddString(Debug);
+        _settings.GrappleLine.enabled = false;
+    }
+
+    private void OnDestroy()
+    {
+        DebugHUD.RemoveString(Debug);
+    }
 
     private void GrappleTick(Vector3 forward, bool grapplePressed, bool grappleReleased)
     {
@@ -46,9 +59,12 @@ public class GrappleHook : GearBase
             _grappleHoveringTarget = hit.point;
         }
 
+        _hit = hit.collider;
+
         float distance = Vector3.Distance(_settings.GrappleOrigin.position, _grappleTarget);
         bool inRange = distance < _settings.GrappleRange && distance > _settings.MinDistance;
 
+        UnityEngine.Debug.Log(didHit + " " + grapplePressed + " " + inRange);
         if (!_grappling && didHit && grapplePressed && inRange)
         {
             _animator.Play("GrappleUsing");
@@ -117,5 +133,11 @@ public class GrappleHook : GearBase
         _animator.Play("GrappleIdle");
         _grappling = false;
         _settings.GrappleLine.enabled = false;
+    }
+
+    private string Debug()
+    {
+        return "Grapple: " + (_hit ? _hit.name : "None") +
+               "\n Grappling: " + _grappling;
     }
 }
