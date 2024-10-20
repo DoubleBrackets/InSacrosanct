@@ -77,6 +77,8 @@ public class GrappleHook : GearBase
                     _settings.GrappleLine.positionCount = 2;
                     _grappling = true;
                     _grappleTarget = hit.point;
+
+                    AkSoundEngine.PostEvent("playGrappleFire", gameObject);
                 }
             }
             else

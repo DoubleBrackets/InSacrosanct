@@ -16,7 +16,7 @@
 								</Action>
 							</ChildrenList>
 						</Event>
-						<Event Name="playTutorialMusic" ID="{8FB96AE5-1220-4F38-B389-451F3258B286}">
+						<Event Name="playIntroMusic" ID="{8FB96AE5-1220-4F38-B389-451F3258B286}">
 							<ChildrenList>
 								<Action Name="" ID="{1C7A4BC3-18DF-4648-98AD-237A53559156}" ShortID="515380890">
 									<ReferenceList>
@@ -80,6 +80,39 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Wallside" ID="{2781B6AC-737C-45E3-BF37-BE56F560A565}" WorkUnitID="{12B32864-9494-4D7A-A8B7-B27E01B926F9}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="playWormLoop" ID="{280158A1-15C2-46AD-A429-A6E4ED75A8F2}">
+							<ChildrenList>
+								<Action Name="" ID="{9E4097A9-DA00-455C-B2AB-B65651BD04B9}" ShortID="355083443">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="WORM LOOP" ID="{EE5AA878-7189-4154-9CEC-9AE4532A458F}" WorkUnitID="{12B32864-9494-4D7A-A8B7-B27E01B926F9}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="playAirDash" ID="{3395FAFB-C3BB-4FF1-975F-E7A63D49C5E0}">
+							<ChildrenList>
+								<Action Name="" ID="{2166A4BD-1D30-4587-B9C3-0D000507D810}" ShortID="820229176">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Air Dash" ID="{2EC969A9-2064-4963-85D9-F5AADD3AA079}" WorkUnitID="{12B32864-9494-4D7A-A8B7-B27E01B926F9}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="playGrappleFire" ID="{CF85FB67-24E7-4E3F-992A-51D7BEE8DD0E}">
+							<ChildrenList>
+								<Action Name="" ID="{E24C9368-DE33-453C-B241-B2466AF6B3CE}" ShortID="810972165">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Grapple Fire" ID="{D4D3ED8E-3297-4AB5-8FC0-DDAD850F419B}" WorkUnitID="{12B32864-9494-4D7A-A8B7-B27E01B926F9}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

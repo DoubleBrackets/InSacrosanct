@@ -17067,6 +17067,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1994798610}
     - target: {fileID: 4430431680610947981, guid: 5cb2f9eb6fc46d94d982d6fc81526898, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4430431680610947981, guid: 5cb2f9eb6fc46d94d982d6fc81526898, type: 3}
       propertyPath: footstepDelay
       value: 0.2
       objectReference: {fileID: 0}
@@ -17078,7 +17082,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Services
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7572326736496597619, guid: 5cb2f9eb6fc46d94d982d6fc81526898, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

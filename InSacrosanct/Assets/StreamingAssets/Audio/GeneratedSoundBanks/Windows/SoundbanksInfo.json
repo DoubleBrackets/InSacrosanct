@@ -47,7 +47,7 @@
     "Id": "1492361653",
     "Type": "User",
     "Language": "SFX",
-    "Hash": "{B24979CA-D00D-EBEE-A20E-C93991E516AF}",
+    "Hash": "{A473046D-C466-1CFC-6F44-C8005ECC1337}",
     "ShortName": "Sounds",
     "Path": "Sounds.bnk",
     "Media": [
@@ -74,6 +74,22 @@
       "Location": "Memory",
       "ShortName": "Jump 1.wav",
       "CachePath": "SFX/Jump 1_818F3B66.wem"
+     },
+     {
+      "Id": "73089778",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "WORM LOOP.wav",
+      "CachePath": "SFX/WORM LOOP_818F3B66.wem"
+     },
+     {
+      "Id": "88251158",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Air Dash.wav",
+      "CachePath": "SFX/Air Dash_818F3B66.wem"
      },
      {
       "Id": "141143672",
@@ -108,6 +124,14 @@
       "CachePath": "SFX/Jump 2_818F3B66.wem"
      },
      {
+      "Id": "262746642",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "WEAPBow_Ranged Crossbow-Crossbow Large Fire 02_AKB00M_Medieval Weapons.wav",
+      "CachePath": "SFX/WEAPBow_Ranged Crossbow-Crossbow Large Fire 02_AKB00M_Medieval Weapons_818F3B66.wem"
+     },
+     {
       "Id": "305213566",
       "Language": "SFX",
       "Streaming": "false",
@@ -140,6 +164,14 @@
       "CachePath": "SFX/MusicTutorial_FBC78EF0.wem"
      },
      {
+      "Id": "626955595",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "WEAPBow_Ranged Crossbow-Crossbow Large Fire 01_AKB00M_Medieval Weapons.wav",
+      "CachePath": "SFX/WEAPBow_Ranged Crossbow-Crossbow Large Fire 01_AKB00M_Medieval Weapons_818F3B66.wem"
+     },
+     {
       "Id": "652457101",
       "Language": "SFX",
       "Streaming": "false",
@@ -162,6 +194,14 @@
       "Location": "Memory",
       "ShortName": "FEETHmn_HighHeels Concrete-Run 02 Composite_AKB00M_Footstep.wav",
       "CachePath": "SFX/FEETHmn_HighHeels Concrete-Run 02 Composite_AKB00M_Footstep_818F3B66.wem"
+     },
+     {
+      "Id": "818683904",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "WEAPBow_Ranged Crossbow-Crossbow Large Fire 03_AKB00M_Medieval Weapons.wav",
+      "CachePath": "SFX/WEAPBow_Ranged Crossbow-Crossbow Large Fire 03_AKB00M_Medieval Weapons_818F3B66.wem"
      },
      {
       "Id": "880027887",
@@ -189,6 +229,18 @@
      }
     ],
     "Events": [
+     {
+      "Id": "2328845601",
+      "Name": "playAirDash",
+      "DurationType": "OneShot",
+      "DurationMin": "8.176",
+      "DurationMax": "8.176",
+      "MediaRefs": [
+       {
+        "Id": "88251158"
+       }
+      ]
+     },
      {
       "Id": "2840201783",
       "Name": "playDeath",
@@ -225,6 +277,34 @@
        },
        {
         "Id": "708222936"
+       }
+      ]
+     },
+     {
+      "Id": "1382669664",
+      "Name": "playGrappleFire",
+      "DurationType": "OneShot",
+      "DurationMin": "1.3313646",
+      "DurationMax": "1.4155625",
+      "MediaRefs": [
+       {
+        "Id": "262746642"
+       },
+       {
+        "Id": "626955595"
+       },
+       {
+        "Id": "818683904"
+       }
+      ]
+     },
+     {
+      "Id": "3781801840",
+      "Name": "playIntroMusic",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "539017146"
        }
       ]
      },
@@ -269,22 +349,25 @@
       ]
      },
      {
-      "Id": "1808398206",
-      "Name": "playTutorialMusic",
-      "DurationType": "Infinite",
-      "MediaRefs": [
-       {
-        "Id": "539017146"
-       }
-      ]
-     },
-     {
       "Id": "187405210",
       "Name": "playWallslide",
       "DurationType": "Infinite",
       "MediaRefs": [
        {
         "Id": "889889250"
+       }
+      ]
+     },
+     {
+      "Id": "367458232",
+      "Name": "playWormLoop",
+      "MaxAttenuation": "250",
+      "DurationType": "OneShot",
+      "DurationMin": "54",
+      "DurationMax": "54",
+      "MediaRefs": [
+       {
+        "Id": "73089778"
        }
       ]
      },
@@ -299,6 +382,6 @@
     ]
    }
   ],
-  "FileHash": "{6166AEF5-ECD3-1BD7-D5DE-511DA3764EAE}"
+  "FileHash": "{15CD5DDC-D47E-24DF-99FA-84F6301E26BE}"
  }
 }

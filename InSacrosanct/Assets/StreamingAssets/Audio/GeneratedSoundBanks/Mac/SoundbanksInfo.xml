@@ -22,7 +22,7 @@
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 		</SoundBank>
-		<SoundBank Id="1492361653" Type="User" Language="SFX" Hash="{B24979CA-D00D-EBEE-A20E-C93991E516AF}">
+		<SoundBank Id="1492361653" Type="User" Language="SFX" Hash="{A473046D-C466-1CFC-6F44-C8005ECC1337}">
 			<ShortName>Sounds</ShortName>
 			<Path>Sounds.bnk</Path>
 			<Media>
@@ -37,6 +37,14 @@
 				<File Id="69265141" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Jump 1.wav</ShortName>
 					<CachePath>SFX/Jump 1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="73089778" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>WORM LOOP.wav</ShortName>
+					<CachePath>SFX/WORM LOOP_818F3B66.wem</CachePath>
+				</File>
+				<File Id="88251158" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Air Dash.wav</ShortName>
+					<CachePath>SFX/Air Dash_818F3B66.wem</CachePath>
 				</File>
 				<File Id="141143672" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>HornFastPt1.wav</ShortName>
@@ -54,6 +62,10 @@
 					<ShortName>Jump 2.wav</ShortName>
 					<CachePath>SFX/Jump 2_818F3B66.wem</CachePath>
 				</File>
+				<File Id="262746642" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>WEAPBow_Ranged Crossbow-Crossbow Large Fire 02_AKB00M_Medieval Weapons.wav</ShortName>
+					<CachePath>SFX/WEAPBow_Ranged Crossbow-Crossbow Large Fire 02_AKB00M_Medieval Weapons_818F3B66.wem</CachePath>
+				</File>
 				<File Id="305213566" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FEETHmn_HighHeels Concrete-Run 05 Composite_AKB00M_Footstep.wav</ShortName>
 					<CachePath>SFX/FEETHmn_HighHeels Concrete-Run 05 Composite_AKB00M_Footstep_818F3B66.wem</CachePath>
@@ -70,6 +82,10 @@
 					<ShortName>MusicTutorial.wav</ShortName>
 					<CachePath>SFX/MusicTutorial_FBC78EF0.wem</CachePath>
 				</File>
+				<File Id="626955595" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>WEAPBow_Ranged Crossbow-Crossbow Large Fire 01_AKB00M_Medieval Weapons.wav</ShortName>
+					<CachePath>SFX/WEAPBow_Ranged Crossbow-Crossbow Large Fire 01_AKB00M_Medieval Weapons_818F3B66.wem</CachePath>
+				</File>
 				<File Id="652457101" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FEETHmn_HighHeels Concrete-Run 03 Composite_AKB00M_Footstep.wav</ShortName>
 					<CachePath>SFX/FEETHmn_HighHeels Concrete-Run 03 Composite_AKB00M_Footstep_818F3B66.wem</CachePath>
@@ -81,6 +97,10 @@
 				<File Id="708222936" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FEETHmn_HighHeels Concrete-Run 02 Composite_AKB00M_Footstep.wav</ShortName>
 					<CachePath>SFX/FEETHmn_HighHeels Concrete-Run 02 Composite_AKB00M_Footstep_818F3B66.wem</CachePath>
+				</File>
+				<File Id="818683904" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>WEAPBow_Ranged Crossbow-Crossbow Large Fire 03_AKB00M_Medieval Weapons.wav</ShortName>
+					<CachePath>SFX/WEAPBow_Ranged Crossbow-Crossbow Large Fire 03_AKB00M_Medieval Weapons_818F3B66.wem</CachePath>
 				</File>
 				<File Id="880027887" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>HornSlowPt1.wav</ShortName>
@@ -96,6 +116,11 @@
 				</File>
 			</Media>
 			<Events>
+				<Event Id="2328845601" Name="playAirDash" DurationType="OneShot" DurationMin="8.176" DurationMax="8.176">
+					<MediaRefs>
+						<MediaRef Id="88251158"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="2840201783" Name="playDeath" DurationType="OneShot" DurationMin="13.637333" DurationMax="13.637333">
 					<MediaRefs>
 						<MediaRef Id="1058052428"/>
@@ -109,6 +134,18 @@
 						<MediaRef Id="481624042"/>
 						<MediaRef Id="652457101"/>
 						<MediaRef Id="708222936"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1382669664" Name="playGrappleFire" DurationType="OneShot" DurationMin="1.3313646" DurationMax="1.4155625">
+					<MediaRefs>
+						<MediaRef Id="262746642"/>
+						<MediaRef Id="626955595"/>
+						<MediaRef Id="818683904"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3781801840" Name="playIntroMusic" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="539017146"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="1717476791" Name="playJump" DurationType="OneShot" DurationMin="1.5" DurationMax="1.5">
@@ -127,19 +164,19 @@
 						<MediaRef Id="880027887"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1808398206" Name="playTutorialMusic" DurationType="Infinite">
-					<MediaRefs>
-						<MediaRef Id="539017146"/>
-					</MediaRefs>
-				</Event>
 				<Event Id="187405210" Name="playWallslide" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="889889250"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="367458232" Name="playWormLoop" MaxAttenuation="250" DurationType="OneShot" DurationMin="54" DurationMax="54">
+					<MediaRefs>
+						<MediaRef Id="73089778"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="2429347612" Name="stopWallslide" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{044D1FAA-AD79-40F0-AA02-A9AB87DD6E85}</FileHash>
+	<FileHash>{009B4CCB-19EE-F70D-6A8C-38D286B92FB9}</FileHash>
 </SoundBanksInfo>

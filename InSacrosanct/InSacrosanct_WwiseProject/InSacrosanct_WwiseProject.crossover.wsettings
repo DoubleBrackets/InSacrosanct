@@ -3,13 +3,16 @@
 	<UserProjectSettingsInfo>
 		<UserProjectSettings Name="" ID="{CEC3B30A-A2D1-4C7A-BA35-5BB0F4CEC8EF}">
 			<PropertyList>
-				<Property Name="AudioFilesImporter\Path" Type="string" Value="Y:\Downloads\drive-download-20241020T073301Z-001\"/>
+				<Property Name="AudioFilesImporter\Path" Type="string" Value="Y:\Downloads\"/>
 				<Property Name="Event Action List\{2191CF3F-1D74-46E1-B2DC-CC3D73EED0F7}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{280158A1-15C2-46AD-A429-A6E4ED75A8F2}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{291860FA-2BAD-4061-83BE-EFC72CCEA1B6}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{3395FAFB-C3BB-4FF1-975F-E7A63D49C5E0}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{37452F7C-CC3E-4E51-A7CB-7AC72FE75B25}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{8FB96AE5-1220-4F38-B389-451F3258B286}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{9A54E742-8E93-4A69-A500-06B2B1EB74DD}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{CF17B8CF-F8A3-45F1-B408-724E650A075F}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{CF85FB67-24E7-4E3F-992A-51D7BEE8DD0E}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{F41B6F7D-7C4F-42F5-A9D5-D4903C44B082}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="EventView\FilterMode1" Type="int32" Value="2"/>
 				<Property Name="ExternalSourcesInputPath" Type="string">

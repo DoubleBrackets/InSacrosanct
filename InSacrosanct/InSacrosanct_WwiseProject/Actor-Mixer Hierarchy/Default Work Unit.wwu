@@ -3,28 +3,6 @@
 	<AudioObjects>
 		<WorkUnit Name="Default Work Unit" ID="{12B32864-9494-4D7A-A8B7-B27E01B926F9}" PersistMode="Standalone">
 			<ChildrenList>
-				<Sound Name="Grapple Release" ID="{812ED693-E7E2-45D5-AFEA-E0CE4AF99740}" ShortID="556109180">
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B989FA84-7907-4F37-9BC7-1D121F6B1CB6}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{164F1ABA-2E16-4997-A399-827FF5423095}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<AudioFileSource Name="Grapple Release" ID="{5A253718-1A02-47D3-B985-2581C92D5502}">
-							<Language>SFX</Language>
-							<AudioFile>Grapple Release.wav</AudioFile>
-							<MediaIDList>
-								<MediaID ID="922454210"/>
-							</MediaIDList>
-						</AudioFileSource>
-					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="Grapple Release" ID="{5A253718-1A02-47D3-B985-2581C92D5502}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
 				<Sound Name="Death" ID="{8F73B306-5FAC-4E9B-BC02-585A7ED75E3D}" ShortID="268093307">
 					<ReferenceList>
 						<Reference Name="Conversion">
@@ -45,28 +23,6 @@
 					</ChildrenList>
 					<ActiveSourceList>
 						<ActiveSource Name="Death" ID="{CC246927-7B08-4256-A0E8-D6C179B471BA}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
-				<Sound Name="Grapple Fire" ID="{7D0CE9E2-58C3-4FDC-ADCC-0204E9DB12EE}" ShortID="1011740566">
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B989FA84-7907-4F37-9BC7-1D121F6B1CB6}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{164F1ABA-2E16-4997-A399-827FF5423095}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<AudioFileSource Name="Grapple Fire" ID="{2567D9AF-5045-459B-A9FA-9E12A241BA71}">
-							<Language>SFX</Language>
-							<AudioFile>Grapple Fire.wav</AudioFile>
-							<MediaIDList>
-								<MediaID ID="37311132"/>
-							</MediaIDList>
-						</AudioFileSource>
-					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="Grapple Fire" ID="{2567D9AF-5045-459B-A9FA-9E12A241BA71}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="Wallside" ID="{2781B6AC-737C-45E3-BF37-BE56F560A565}" ShortID="996841000">
@@ -120,28 +76,6 @@
 					</ChildrenList>
 					<ActiveSourceList>
 						<ActiveSource Name="Air Dash" ID="{407F2897-E4C3-49D3-86AA-120CFFB8ECE0}" Platform="Linked"/>
-					</ActiveSourceList>
-				</Sound>
-				<Sound Name="Air Dash Cooldown Off" ID="{0F589202-780D-4AD7-9147-EA3FE8E90613}" ShortID="280577263">
-					<ReferenceList>
-						<Reference Name="Conversion">
-							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B989FA84-7907-4F37-9BC7-1D121F6B1CB6}"/>
-						</Reference>
-						<Reference Name="OutputBus">
-							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{164F1ABA-2E16-4997-A399-827FF5423095}"/>
-						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<AudioFileSource Name="Air Dash Cooldown Off" ID="{E6B78050-809A-45C7-8390-00DD449794E4}">
-							<Language>SFX</Language>
-							<AudioFile>Air Dash Cooldown Off.wav</AudioFile>
-							<MediaIDList>
-								<MediaID ID="530931151"/>
-							</MediaIDList>
-						</AudioFileSource>
-					</ChildrenList>
-					<ActiveSourceList>
-						<ActiveSource Name="Air Dash Cooldown Off" ID="{E6B78050-809A-45C7-8390-00DD449794E4}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 				<RandomSequenceContainer Name="Jump" ID="{E57830CE-1A23-40C0-A502-2720F5B68EF4}" ShortID="835062134">
@@ -376,6 +310,237 @@
 							</ChildrenList>
 							<ActiveSourceList>
 								<ActiveSource Name="FEETHmn_HighHeels Concrete-Run 06 Composite_AKB00M_Footstep" ID="{95B9BFAE-FB1C-45F1-903D-EDDDF7249952}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</RandomSequenceContainer>
+				<Sound Name="WORM LOOP" ID="{EE5AA878-7189-4154-9CEC-9AE4532A458F}" ShortID="950077512">
+					<PropertyList>
+						<Property Name="3DSpatialization" Type="int16" Value="1"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Attenuation">
+							<Custom>
+								<Attenuation Name="Attenuation (Custom)" ID="{AFE1A9D8-A7B6-4A3D-B14B-E0626057E5C2}" ShortID="476772818">
+									<PropertyList>
+										<Property Name="RadiusMax" Type="Real64" Value="250"/>
+									</PropertyList>
+									<CurveUsageInfoList>
+										<VolumeDryUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="Custom">
+												<Curve Name="VolumeDry" ID="{FC5076C3-4F7C-4932-86FD-7E5E4512384E}">
+													<PropertyList>
+														<Property Name="Flags" Type="int32" Value="3"/>
+													</PropertyList>
+													<PointList>
+														<Point>
+															<XPos>0</XPos>
+															<YPos>0</YPos>
+															<Flags>5</Flags>
+														</Point>
+														<Point>
+															<XPos>250</XPos>
+															<YPos>-200</YPos>
+															<Flags>37</Flags>
+														</Point>
+													</PointList>
+												</Curve>
+											</CurveUsageInfo>
+										</VolumeDryUsage>
+										<VolumeWetGameUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+										</VolumeWetGameUsage>
+										<VolumeWetUserUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseVolumeDry"/>
+										</VolumeWetUserUsage>
+										<LowPassFilterUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="Custom">
+												<Curve Name="LowPassFilter" ID="{25E307BC-50FA-46C0-AD5E-BD0DAAEB0D27}">
+													<PropertyList>
+														<Property Name="Flags" Type="int32" Value="65537"/>
+													</PropertyList>
+													<PointList>
+														<Point>
+															<XPos>0</XPos>
+															<YPos>0</YPos>
+															<Flags>5</Flags>
+														</Point>
+														<Point>
+															<XPos>250</XPos>
+															<YPos>100</YPos>
+															<Flags>37</Flags>
+														</Point>
+													</PointList>
+												</Curve>
+											</CurveUsageInfo>
+										</LowPassFilterUsage>
+										<HighPassFilterUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="None">
+												<Curve Name="HighPassFilter" ID="{D38C34E1-657F-4187-83C0-6FDE29F51A33}">
+													<PropertyList>
+														<Property Name="Flags" Type="int32" Value="65537"/>
+													</PropertyList>
+													<PointList>
+														<Point>
+															<XPos>0</XPos>
+															<YPos>0</YPos>
+															<Flags>5</Flags>
+														</Point>
+														<Point>
+															<XPos>250</XPos>
+															<YPos>100</YPos>
+															<Flags>37</Flags>
+														</Point>
+													</PointList>
+												</Curve>
+											</CurveUsageInfo>
+										</HighPassFilterUsage>
+										<SpreadUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+										</SpreadUsage>
+										<FocusUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="None"/>
+										</FocusUsage>
+										<ObstructionVolumeUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+										</ObstructionVolumeUsage>
+										<ObstructionLPFUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+										</ObstructionLPFUsage>
+										<ObstructionHPFUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+										</ObstructionHPFUsage>
+										<OcclusionVolumeUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+										</OcclusionVolumeUsage>
+										<OcclusionLPFUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+										</OcclusionLPFUsage>
+										<OcclusionHPFUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+										</OcclusionHPFUsage>
+										<DiffractionVolumeUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+										</DiffractionVolumeUsage>
+										<DiffractionLPFUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+										</DiffractionLPFUsage>
+										<DiffractionHPFUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+										</DiffractionHPFUsage>
+										<TransmissionVolumeUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+										</TransmissionVolumeUsage>
+										<TransmissionLPFUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+										</TransmissionLPFUsage>
+										<TransmissionHPFUsage>
+											<CurveUsageInfo Platform="Linked" CurveToUse="UseProject"/>
+										</TransmissionHPFUsage>
+									</CurveUsageInfoList>
+								</Attenuation>
+							</Custom>
+						</Reference>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B989FA84-7907-4F37-9BC7-1D121F6B1CB6}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{164F1ABA-2E16-4997-A399-827FF5423095}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="WORM LOOP" ID="{772E48AA-ACD4-4789-AC1E-CC37D4F120B9}">
+							<PropertyList>
+								<Property Name="CrossfadeDuration" Type="Real64" Value="1000"/>
+								<Property Name="LoopBegin" Type="Real64" Value="2"/>
+								<Property Name="LoopEnd" Type="Real64" Value="52"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>WORM LOOP.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="73089778"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="WORM LOOP" ID="{772E48AA-ACD4-4789-AC1E-CC37D4F120B9}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<RandomSequenceContainer Name="Grapple Fire" ID="{D4D3ED8E-3297-4AB5-8FC0-DDAD850F419B}" ShortID="624634965">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B989FA84-7907-4F37-9BC7-1D121F6B1CB6}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{164F1ABA-2E16-4997-A399-827FF5423095}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="WEAPBow_Ranged Crossbow-Crossbow Large Fire 01_AKB00M_Medieval Weapons" ID="{AC394F63-2E39-4F85-BF26-1D65619E0AB3}" ShortID="1048896693">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B989FA84-7907-4F37-9BC7-1D121F6B1CB6}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{164F1ABA-2E16-4997-A399-827FF5423095}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="WEAPBow_Ranged Crossbow-Crossbow Large Fire 01_AKB00M_Medieval Weapons" ID="{51F39270-ABDA-4E5F-B545-2F02D163E1A8}">
+									<Language>SFX</Language>
+									<AudioFile>WEAPBow_Ranged Crossbow-Crossbow Large Fire 01_AKB00M_Medieval Weapons.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="626955595"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="WEAPBow_Ranged Crossbow-Crossbow Large Fire 01_AKB00M_Medieval Weapons" ID="{51F39270-ABDA-4E5F-B545-2F02D163E1A8}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="WEAPBow_Ranged Crossbow-Crossbow Large Fire 02_AKB00M_Medieval Weapons" ID="{9B41798D-9456-4571-9C43-6575B5905D13}" ShortID="332017354">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B989FA84-7907-4F37-9BC7-1D121F6B1CB6}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{164F1ABA-2E16-4997-A399-827FF5423095}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="WEAPBow_Ranged Crossbow-Crossbow Large Fire 02_AKB00M_Medieval Weapons" ID="{C5F8E32C-EE81-4336-B929-6C97D1B8FF99}">
+									<Language>SFX</Language>
+									<AudioFile>WEAPBow_Ranged Crossbow-Crossbow Large Fire 02_AKB00M_Medieval Weapons.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="262746642"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="WEAPBow_Ranged Crossbow-Crossbow Large Fire 02_AKB00M_Medieval Weapons" ID="{C5F8E32C-EE81-4336-B929-6C97D1B8FF99}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="WEAPBow_Ranged Crossbow-Crossbow Large Fire 03_AKB00M_Medieval Weapons" ID="{91D0F934-FE5D-4C4F-8E0B-6EA782903892}" ShortID="397778765">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B989FA84-7907-4F37-9BC7-1D121F6B1CB6}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{164F1ABA-2E16-4997-A399-827FF5423095}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="WEAPBow_Ranged Crossbow-Crossbow Large Fire 03_AKB00M_Medieval Weapons" ID="{C9CC905A-6AEA-4F47-84E2-45FD3EAD4473}">
+									<Language>SFX</Language>
+									<AudioFile>WEAPBow_Ranged Crossbow-Crossbow Large Fire 03_AKB00M_Medieval Weapons.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="818683904"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="WEAPBow_Ranged Crossbow-Crossbow Large Fire 03_AKB00M_Medieval Weapons" ID="{C9CC905A-6AEA-4F47-84E2-45FD3EAD4473}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>

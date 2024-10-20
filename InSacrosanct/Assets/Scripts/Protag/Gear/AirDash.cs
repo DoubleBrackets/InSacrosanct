@@ -54,6 +54,8 @@ public class AirDash : GearBase
 
                 Protag.MoveController.Velocity = newVelocity;
                 _dashTimer = _dashCooldown;
+
+                AkSoundEngine.PostEvent("playAirDash", gameObject);
             }
         }
     }
