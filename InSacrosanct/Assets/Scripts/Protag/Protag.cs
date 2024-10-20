@@ -61,7 +61,9 @@ public class Protag : MonoBehaviour, ILocatableService
 
     private void Start()
     {
-        List<GearBase> equippedGears = _gearRegistry.GetGearEntries(_coreService.Instance.CurrentLevel).ToList();
+        int currentLevel = _coreService.Instance.CurrentLevel;
+        Debug.Log(currentLevel);
+        List<GearBase> equippedGears = _gearRegistry.GetGearEntries(currentLevel).ToList();
 
         _gearHandler.Initialize(this, _inputProvider.Instance, equippedGears);
     }

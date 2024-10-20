@@ -81,7 +81,7 @@ MonoBehaviour:
   _cameraTransform: {fileID: 3754519502070763107}
   _cinemachineCamera: {fileID: 1938213931851893653}
   _cameraSettings:
-    Sensitivity: 50
+    Sensitivity: 25
     MinTiltDegrees: -90
     MaxTiltDegrees: 90
 --- !u!114 &878950687503259385
@@ -154,6 +154,55 @@ MonoBehaviour:
     FOVLerpSpeed: 4
     MaxDutchTilt: 10
     DutchTiltLerpSpeed: 5
+--- !u!1 &2813523829664747709
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3769880383132398537}
+  - component: {fileID: 6919875395368051910}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3769880383132398537
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2813523829664747709}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2050152887279073161}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6919875395368051910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2813523829664747709}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 10fc4df2da32a41aaa32d77bc913491c, type: 2}
 --- !u!1 &3157198442381372945
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,7 +250,7 @@ MonoBehaviour:
   _characterController: {fileID: 6154297845243383366}
   _moveSettings:
     MoveSpeed: 25
-    JumpHeight: 1.55
+    JumpHeight: 3
     Gravity: -25
     Acceleration: 4
     Friction: 6
@@ -784,6 +833,7 @@ Transform:
   - {fileID: 285092776777677392}
   - {fileID: 2911454171543714605}
   - {fileID: 5180821624678195291}
+  - {fileID: 3769880383132398537}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7246748565911561327

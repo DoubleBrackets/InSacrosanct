@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class WormGodSegment : MonoBehaviour
+public class WormGodSegment : MonoBehaviour, IKillable
 {
     [Serializable]
     public struct SegmentSettings
@@ -20,8 +20,6 @@ public class WormGodSegment : MonoBehaviour
 
     [SerializeField]
     private SegmentSettings _settings;
-
-    public bool Killable => _settings.Killable;
 
     public Vector3 Pos
     {
@@ -49,6 +47,28 @@ public class WormGodSegment : MonoBehaviour
         Gizmos.DrawWireSphere(Pos, _settings.TerrainCheckRadius);
     }
 
+    public bool Killable => _settings.Killable;
+
+    public void Kill()
+    {
+        if (!_settings.Killable)
+        {
+            return;
+        }
+
+        Alive = false;
+
+        _settings.AliveVisuals.SetActive(false);
+        _settings.DeadVisuals.SetActive(true);
+
+        if (_settings.DeathParticles != null)
+        {
+            _settings.DeathParticles.Play();
+        }
+    }
+
+    public Transform AnchorPoint => _anchorPoint;
+
     public bool IsInTerrain()
     {
         if (_didUpdateInTerrainThisFrame)
@@ -70,23 +90,10 @@ public class WormGodSegment : MonoBehaviour
         _didUpdateInTerrainThisFrame = false;
     }
 
-    public void Kill()
-    {
-        if (!_settings.Killable)
-        {
-            return;
-        }
-
-        Alive = false;
-
-        _settings.AliveVisuals.SetActive(false);
-        _settings.DeadVisuals.SetActive(true);
-        _settings.DeathParticles.Play();
-    }
-
     public void FinalDeath()
     {
         _settings.FinalDeathParticles.Play();
         _settings.DeadVisuals.SetActive(false);
+        _settings.AliveVisuals.SetActive(false);
     }
 }

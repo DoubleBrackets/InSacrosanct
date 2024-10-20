@@ -58,7 +58,7 @@ public class WormGodAI : MonoBehaviour
 
     private readonly List<WormGodSegment> _bodySegments = new();
 
-    private readonly bool finalDeath = false;
+    private bool isDead;
 
     private WormGodSegment _head;
 
@@ -78,7 +78,7 @@ public class WormGodAI : MonoBehaviour
 
     private void Update()
     {
-        if (this.finalDeath)
+        if (isDead)
         {
             return;
         }
@@ -96,6 +96,7 @@ public class WormGodAI : MonoBehaviour
 
         if (finalDeath)
         {
+            isDead = true;
             FinalDeath(gameObject.GetCancellationTokenOnDestroy());
         }
 
@@ -106,7 +107,8 @@ public class WormGodAI : MonoBehaviour
 
     private async UniTaskVoid FinalDeath(CancellationToken ct)
     {
-        for (int i = _bodySegments.Count - 1; i >= 0; i++)
+        _protag.Instance.FPCameraEffects.SetWormImpulse(0.5f);
+        for (int i = _bodySegments.Count - 1; i >= 0; i--)
         {
             await UniTask.Delay(350);
             ct.ThrowIfCancellationRequested();
@@ -114,7 +116,13 @@ public class WormGodAI : MonoBehaviour
         }
 
         await UniTask.Delay(600);
+
         _head.FinalDeath();
+
+        await UniTask.Delay(100);
+        _protag.Instance.FPCameraEffects.SetWormImpulse(0);
+
+        Destroy(gameObject);
     }
 
     private void Effects()
@@ -144,13 +152,14 @@ public class WormGodAI : MonoBehaviour
         _head = Instantiate(_headPrefab, transform);
 
         WormGodSegment tail = Instantiate(_tailPrefab, transform);
-        _bodySegments.Add(tail);
 
         for (var i = 0; i < _config.SegmentCount; i++)
         {
             WormGodSegment segment = Instantiate(_segmentPrefab, transform);
             _bodySegments.Add(segment);
         }
+
+        _bodySegments.Add(tail);
     }
 
     private void Steering()

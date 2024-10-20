@@ -23,6 +23,7 @@ public class LevelFinish : MonoBehaviour
     private void Awake()
     {
         _core = new LocatedService<CoreService>(_serviceLocator);
+        _core.Instance.CurrentLevel = _nextLevelIndex - 1;
     }
 
     private void OnDrawGizmos()

@@ -95,6 +95,21 @@ public class GearHandler : MonoBehaviour
 
                 EquipGear(_gears[_cycleIndex]);
             }
+
+            if (Input.GetKeyDown(KeyCode.Alpha1) && _gears.Count > 0)
+            {
+                EquipGear(_gears[0]);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha2) && _gears.Count > 1)
+            {
+                EquipGear(_gears[1]);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha3) && _gears.Count > 2)
+            {
+                EquipGear(_gears[2]);
+            }
         }
         else
         {

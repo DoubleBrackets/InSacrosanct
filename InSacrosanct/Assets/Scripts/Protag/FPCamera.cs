@@ -34,6 +34,7 @@ public class FpCamera : MonoBehaviour
 
     public Vector3 CameraForward => _cameraTransform.forward;
     public Vector3 CameraRight => _cameraTransform.right;
+    public Vector3 Position => _cameraTransform.position;
 
     private float _xRotation;
     private float _yRotation;

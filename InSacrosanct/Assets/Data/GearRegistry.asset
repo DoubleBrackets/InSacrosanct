@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gearEntries:
   - GearPrefab: {fileID: 1460959474186667279, guid: 435a3356e1530f2428f0936c9fcbfad2, type: 3}
-    LevelRequirement: 0
+    LevelRequirement: 2
   - GearPrefab: {fileID: -7840737732811320216, guid: 6b63d15d2b86609419ba9c82041300f3, type: 3}
-    LevelRequirement: 0
+    LevelRequirement: 3
+  - GearPrefab: {fileID: 8737544645182939456, guid: 538fe940015299d428015e2c4be2c08b, type: 3}
+    LevelRequirement: 4

@@ -64,6 +64,7 @@ public class GrappleHook : GearBase
         float distance = Vector3.Distance(_settings.GrappleOrigin.position, _grappleTarget);
         bool inRange = distance < _settings.GrappleRange && distance > _settings.MinDistance;
 
+        UnityEngine.Debug.Log($"{didHit} {inRange} {_grappling}");
         if (!_grappling)
         {
             if (didHit && inRange)
