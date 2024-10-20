@@ -27,6 +27,12 @@ public class WormGodAI : MonoBehaviour
         public float GravityAccel;
 
         public Vector3 TargetOffset;
+
+        [Header("Screen shake")]
+
+        public float ShakeMaxRange;
+
+        public float ShakeMinRange;
     }
 
     [Header("Dependencies")]
@@ -68,8 +74,37 @@ public class WormGodAI : MonoBehaviour
 
     private void Update()
     {
+        _head.Tick();
+        foreach (WormGodSegment segment in _bodySegments)
+        {
+            segment.Tick();
+        }
+
         Steering();
         ResolveBodySegments();
+        Effects();
+    }
+
+    private void Effects()
+    {
+        // Get closest segment to protag
+        float closestDist = Vector3.Distance(_head.Pos, _protag.Instance.Pos);
+        foreach (WormGodSegment segment in _bodySegments)
+        {
+            if (!segment.IsInTerrain())
+            {
+                continue;
+            }
+
+            float dist = Vector3.Distance(segment.Pos, _protag.Instance.Pos);
+            if (dist < closestDist)
+            {
+                closestDist = dist;
+            }
+        }
+
+        float strength = Mathf.InverseLerp(_config.ShakeMaxRange, _config.ShakeMinRange, closestDist);
+        _protag.Instance.FPCameraEffects.SetWormImpulse(strength);
     }
 
     private void InitializeSegments()

@@ -38,6 +38,8 @@ public class Protag : MonoBehaviour, ILocatableService
     public Vector3 Pos => _moveController.Position;
     public FpCamera FpCamera => _fpCamera;
 
+    public FPCameraEffects FPCameraEffects => _fpCameraEffects;
+
     private LocatedService<InputProvider> _inputProvider;
     private LocatedService<CoreService> _coreService;
 

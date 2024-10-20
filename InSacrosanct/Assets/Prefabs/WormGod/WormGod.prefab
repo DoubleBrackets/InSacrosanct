@@ -53,7 +53,9 @@ MonoBehaviour:
     SegmentAngleConstraint: 0
     SegmentCount: 25
     SteeringForce: 26
-    MaxSteeringAngle: 36
-    TopSpeed: 75
+    MaxSteeringAngle: 34
+    TopSpeed: 70
     GravityAccel: -20
     TargetOffset: {x: 0, y: 11, z: 0}
+    ShakeMaxRange: 250
+    ShakeMinRange: 25

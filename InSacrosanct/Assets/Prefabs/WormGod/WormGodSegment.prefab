@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _anchorPoint: {fileID: 9041681397473536259}
   _settings:
-    TerrainCheckRadius: 22.5
+    TerrainCheckRadius: 18.85
     TerrainLayer:
       serializedVersion: 2
       m_Bits: 64

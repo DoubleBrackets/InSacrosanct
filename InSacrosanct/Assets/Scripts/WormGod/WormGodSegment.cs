@@ -24,16 +24,34 @@ public class WormGodSegment : MonoBehaviour
 
     private readonly Collider[] _results = new Collider[1];
 
+    private bool _didUpdateInTerrainThisFrame;
+
+    private bool _isInTerrain;
+
     private void OnDrawGizmos()
     {
-        Gizmos.color = IsInTerrain() ? Color.red : Color.green;
+        Gizmos.color = IsInTerrain() ? Color.green : Color.red;
         Gizmos.DrawWireSphere(Pos, _settings.TerrainCheckRadius);
     }
 
     public bool IsInTerrain()
     {
-        int size = Physics.OverlapSphereNonAlloc(Pos, _settings.TerrainCheckRadius, _results, _settings.TerrainLayer);
+        if (_didUpdateInTerrainThisFrame)
+        {
+            return _isInTerrain;
+        }
 
-        return size > 0 || Pos.y < 0;
+        _didUpdateInTerrainThisFrame = true;
+        int size = Physics.OverlapSphereNonAlloc(Pos, _settings.TerrainCheckRadius, _results,
+            _settings.TerrainLayer);
+
+        _isInTerrain = size > 0 || Pos.y < 0;
+
+        return _isInTerrain;
+    }
+
+    public void Tick()
+    {
+        _didUpdateInTerrainThisFrame = false;
     }
 }
