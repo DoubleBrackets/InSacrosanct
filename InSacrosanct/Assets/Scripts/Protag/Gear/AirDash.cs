@@ -14,13 +14,17 @@ public class AirDash : GearBase
     [SerializeField]
     private Animator _animator;
 
-    private float _dashTime;
+    private float _dashTimer;
 
     private void Update()
     {
-        if (Time.time < _dashTime && Time.time + Time.deltaTime >= _dashTime)
+        if (_dashTimer > 0f)
         {
-            _animator.Play("FeatherIdle");
+            _dashTimer -= Time.deltaTime;
+            if (_dashTimer < 0f)
+            {
+                _animator.Play("FeatherIdle");
+            }
         }
     }
 
@@ -40,7 +44,7 @@ public class AirDash : GearBase
 
         if (Input.GetMouseButtonDown(0) && !Protag.MoveController.IsSurfing)
         {
-            if (Time.time >= _dashTime)
+            if (_dashTimer <= 0f)
             {
                 _animator.Play("FeatherUsed");
                 Protag.MoveController.ForceUnground();
@@ -49,7 +53,7 @@ public class AirDash : GearBase
                 Vector3 newVelocity = direction * _dashSpeed;
 
                 Protag.MoveController.Velocity = newVelocity;
-                _dashTime = Time.time + _dashCooldown;
+                _dashTimer = _dashCooldown;
             }
         }
     }

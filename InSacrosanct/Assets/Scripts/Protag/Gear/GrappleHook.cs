@@ -64,14 +64,24 @@ public class GrappleHook : GearBase
         float distance = Vector3.Distance(_settings.GrappleOrigin.position, _grappleTarget);
         bool inRange = distance < _settings.GrappleRange && distance > _settings.MinDistance;
 
-        UnityEngine.Debug.Log(didHit + " " + grapplePressed + " " + inRange);
-        if (!_grappling && didHit && grapplePressed && inRange)
+        if (!_grappling)
         {
-            _animator.Play("GrappleUsing");
-            _settings.GrappleLine.enabled = true;
-            _settings.GrappleLine.positionCount = 2;
-            _grappling = true;
-            _grappleTarget = hit.point;
+            if (didHit && inRange)
+            {
+                _animator.Play("GrappleHovering");
+                if (grapplePressed)
+                {
+                    _animator.Play("GrappleUsing");
+                    _settings.GrappleLine.enabled = true;
+                    _settings.GrappleLine.positionCount = 2;
+                    _grappling = true;
+                    _grappleTarget = hit.point;
+                }
+            }
+            else
+            {
+                _animator.Play("GrappleIdle");
+            }
         }
 
         if (_grappling)

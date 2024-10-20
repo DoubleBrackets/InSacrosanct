@@ -183,7 +183,7 @@ public class MoveController : MonoBehaviour
                                    ? _moveSettings.SurfMaintainSpeedRequirement
                                    : _moveSettings.SurfEnterSpeedRequirement);
 
-        if (!IsGrounded && _surfContact && surfAim && sufficientSpeed && rawInput.y > 0f && _surfDebounceTimer <= 0f)
+        if (!IsGrounded && _surfContact && surfAim && sufficientSpeed && _surfDebounceTimer <= 0f)
         {
             Vector3 desiredDir = Vector3.ProjectOnPlane(fpCamera.CameraForward, _surfNormal).normalized;
             Vector3 currentDir = Vector3.ProjectOnPlane(_velocity, _surfNormal).normalized;

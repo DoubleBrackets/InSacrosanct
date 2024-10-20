@@ -36,16 +36,16 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 0.1
+    m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: -5141346462598495945}
-    m_Duration: 2.066666666666667
+    m_Duration: 2.166666666666667
     m_TimeScale: 1
     m_ParentTrack: {fileID: -6166367762050901125}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
-    m_BlendOutDuration: 1.7000000000000002
+    m_BlendOutDuration: 2.0333333333333337
     m_MixInCurve:
       serializedVersion: 2
       m_Curve:
@@ -87,15 +87,15 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: UNHOLY DEATH
   - m_Version: 1
-    m_Start: 0.4666666666666667
+    m_Start: 0.13333333333333333
     m_ClipIn: 0
     m_Asset: {fileID: -3272349606143409308}
-    m_Duration: 1.7000000000000002
+    m_Duration: 2.1
     m_TimeScale: 1
     m_ParentTrack: {fileID: -6166367762050901125}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
-    m_BlendInDuration: 1.7000000000000002
+    m_BlendInDuration: 2.0333333333333337
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
@@ -166,8 +166,8 @@ MonoBehaviour:
   m_Name: TextPlayableAsset
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0, g: 0, b: 0, a: 1}
-    fontSize: 55
+    color: {r: 0.4056604, g: 0, b: 0, a: 1}
+    fontSize: 65
     text: UNHOLY DEATH
 --- !u!114 &-3272349606143409308
 MonoBehaviour:
@@ -182,8 +182,8 @@ MonoBehaviour:
   m_Name: TextPlayableAsset(Clone)(Clone)
   m_EditorClassIdentifier: 
   template:
-    color: {r: 0, g: 0, b: 0, a: 0}
-    fontSize: 122
+    color: {r: 0.6132076, g: 0.18801177, b: 0.18801177, a: 0}
+    fontSize: 150
     text: UNHOLY DEATH
 --- !u!114 &-1932663841746597325
 MonoBehaviour:
