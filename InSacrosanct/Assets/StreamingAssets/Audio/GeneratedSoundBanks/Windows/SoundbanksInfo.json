@@ -47,7 +47,7 @@
     "Id": "1492361653",
     "Type": "User",
     "Language": "SFX",
-    "Hash": "{9BB4C624-169B-9A3B-9092-476BC79F026D}",
+    "Hash": "{AC3B8FD0-644B-8F67-75B2-4A33EEC51A88}",
     "ShortName": "Sounds",
     "Path": "Sounds.bnk",
     "Media": [
@@ -65,8 +65,8 @@
       "Id": "417627684",
       "Name": "playMusic",
       "DurationType": "OneShot",
-      "DurationMin": "0",
-      "DurationMax": "0",
+      "DurationMin": "81.734245",
+      "DurationMax": "81.734245",
       "MediaRefs": [
        {
         "Id": "284009548"
@@ -76,6 +76,6 @@
     ]
    }
   ],
-  "FileHash": "{1F61A049-0A2D-FFE2-1297-FC838A92F098}"
+  "FileHash": "{0231D719-1C77-5B82-EA78-143B0EB43724}"
  }
 }

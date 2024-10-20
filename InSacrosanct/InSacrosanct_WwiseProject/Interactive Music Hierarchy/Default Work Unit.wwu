@@ -52,11 +52,6 @@
 						<MusicSegment Name="GDAC_JamDraft2" ID="{CFC5952A-905B-4718-B2C3-3DDAB3F4F643}" ShortID="20191513">
 							<PropertyList>
 								<Property Name="EndPosition" Type="Real64" Value="81734.2403628118"/>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-22</Value>
-									</ValueList>
-								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
