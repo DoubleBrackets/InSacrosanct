@@ -47,35 +47,223 @@
     "Id": "1492361653",
     "Type": "User",
     "Language": "SFX",
-    "Hash": "{AC3B8FD0-644B-8F67-75B2-4A33EEC51A88}",
+    "Hash": "{B5498FD6-BDC9-171E-65B5-7AE5E3809121}",
     "ShortName": "Sounds",
     "Path": "Sounds.bnk",
     "Media": [
      {
-      "Id": "284009548",
+      "Id": "10651075",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "GDAC_JamDraft2.wav",
-      "CachePath": "SFX/GDAC_JamDraft2_FBC78EF0.wem"
+      "ShortName": "FEETHmn_HighHeels Concrete-Run 04 Composite_AKB00M_Footstep.wav",
+      "CachePath": "SFX/FEETHmn_HighHeels Concrete-Run 04 Composite_AKB00M_Footstep_818F3B66.wem"
+     },
+     {
+      "Id": "50913498",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "HornSlowPt2.wav",
+      "CachePath": "SFX/HornSlowPt2_FBC78EF0.wem"
+     },
+     {
+      "Id": "52756148",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Jump 4.wav",
+      "CachePath": "SFX/Jump 4_818F3B66.wem"
+     },
+     {
+      "Id": "69265141",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Jump 1.wav",
+      "CachePath": "SFX/Jump 1_818F3B66.wem"
+     },
+     {
+      "Id": "141143672",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "HornFastPt1.wav",
+      "CachePath": "SFX/HornFastPt1_FBC78EF0.wem"
+     },
+     {
+      "Id": "181063264",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "FEETHmn_HighHeels Concrete-Run 06 Composite_AKB00M_Footstep.wav",
+      "CachePath": "SFX/FEETHmn_HighHeels Concrete-Run 06 Composite_AKB00M_Footstep_818F3B66.wem"
+     },
+     {
+      "Id": "232825661",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "MusicBaseLoop.wav",
+      "CachePath": "SFX/MusicBaseLoop_FBC78EF0.wem"
+     },
+     {
+      "Id": "233726910",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Jump 2.wav",
+      "CachePath": "SFX/Jump 2_818F3B66.wem"
+     },
+     {
+      "Id": "305213566",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "FEETHmn_HighHeels Concrete-Run 05 Composite_AKB00M_Footstep.wav",
+      "CachePath": "SFX/FEETHmn_HighHeels Concrete-Run 05 Composite_AKB00M_Footstep_818F3B66.wem"
+     },
+     {
+      "Id": "376451943",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "MusicIntro.wav",
+      "CachePath": "SFX/MusicIntro_FBC78EF0.wem"
+     },
+     {
+      "Id": "481624042",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "FEETHmn_HighHeels Concrete-Run 01 Composite_AKB00M_Footstep.wav",
+      "CachePath": "SFX/FEETHmn_HighHeels Concrete-Run 01 Composite_AKB00M_Footstep_818F3B66.wem"
+     },
+     {
+      "Id": "539017146",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "MusicTutorial.wav",
+      "CachePath": "SFX/MusicTutorial_FBC78EF0.wem"
+     },
+     {
+      "Id": "652457101",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "FEETHmn_HighHeels Concrete-Run 03 Composite_AKB00M_Footstep.wav",
+      "CachePath": "SFX/FEETHmn_HighHeels Concrete-Run 03 Composite_AKB00M_Footstep_818F3B66.wem"
+     },
+     {
+      "Id": "654757637",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "HornFastPt2.wav",
+      "CachePath": "SFX/HornFastPt2_FBC78EF0.wem"
+     },
+     {
+      "Id": "708222936",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "FEETHmn_HighHeels Concrete-Run 02 Composite_AKB00M_Footstep.wav",
+      "CachePath": "SFX/FEETHmn_HighHeels Concrete-Run 02 Composite_AKB00M_Footstep_818F3B66.wem"
+     },
+     {
+      "Id": "880027887",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "HornSlowPt1.wav",
+      "CachePath": "SFX/HornSlowPt1_FBC78EF0.wem"
      }
     ],
     "Events": [
      {
-      "Id": "417627684",
-      "Name": "playMusic",
+      "Id": "1712852617",
+      "Name": "playFootstep",
       "DurationType": "OneShot",
-      "DurationMin": "81.734245",
-      "DurationMax": "81.734245",
+      "DurationMin": "0.2710099",
+      "DurationMax": "0.33477932",
       "MediaRefs": [
        {
-        "Id": "284009548"
+        "Id": "10651075"
+       },
+       {
+        "Id": "181063264"
+       },
+       {
+        "Id": "305213566"
+       },
+       {
+        "Id": "481624042"
+       },
+       {
+        "Id": "652457101"
+       },
+       {
+        "Id": "708222936"
+       }
+      ]
+     },
+     {
+      "Id": "1717476791",
+      "Name": "playJump",
+      "DurationType": "OneShot",
+      "DurationMin": "1.5",
+      "DurationMax": "1.5",
+      "MediaRefs": [
+       {
+        "Id": "52756148"
+       },
+       {
+        "Id": "69265141"
+       },
+       {
+        "Id": "233726910"
+       }
+      ]
+     },
+     {
+      "Id": "277487121",
+      "Name": "playMainMusic",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "50913498"
+       },
+       {
+        "Id": "141143672"
+       },
+       {
+        "Id": "232825661"
+       },
+       {
+        "Id": "376451943"
+       },
+       {
+        "Id": "654757637"
+       },
+       {
+        "Id": "880027887"
+       }
+      ]
+     },
+     {
+      "Id": "1808398206",
+      "Name": "playTutorialMusic",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "539017146"
        }
       ]
      }
     ]
    }
   ],
-  "FileHash": "{0231D719-1C77-5B82-EA78-143B0EB43724}"
+  "FileHash": "{99392ED7-0E00-534F-7159-6C03DD2B675B}"
  }
 }

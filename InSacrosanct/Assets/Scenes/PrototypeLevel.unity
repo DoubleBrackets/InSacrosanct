@@ -4725,6 +4725,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &681807078 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 901350345446428389, guid: 5cb2f9eb6fc46d94d982d6fc81526898, type: 3}
+  m_PrefabInstance: {fileID: 1805349160355802385}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c59c12a2ae4abf0459b12e1dc1ba5ae6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &734917164
 Mesh:
   m_ObjectHideFlags: 0
@@ -17084,6 +17095,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1994798610 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3663311537928355843, guid: 8c8c65b40cf4a2440b7cab5ddd9a77cb, type: 3}
+  m_PrefabInstance: {fileID: 8285093702108813216}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &951489669775713288
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17192,6 +17208,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4430431680610947981, guid: 5cb2f9eb6fc46d94d982d6fc81526898, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1994798610}
+    - target: {fileID: 4430431680610947981, guid: 5cb2f9eb6fc46d94d982d6fc81526898, type: 3}
+      propertyPath: footstepDelay
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4430431680610947981, guid: 5cb2f9eb6fc46d94d982d6fc81526898, type: 3}
+      propertyPath: inputProvider
+      value: 
+      objectReference: {fileID: 681807078}
     - target: {fileID: 8548835568357450683, guid: 5cb2f9eb6fc46d94d982d6fc81526898, type: 3}
       propertyPath: m_Name
       value: Services

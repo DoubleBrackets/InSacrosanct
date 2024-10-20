@@ -13,7 +13,10 @@ namespace AK
 {
     namespace EVENTS
     {
-        static const AkUniqueID PLAYMUSIC = 417627684U;
+        static const AkUniqueID PLAYFOOTSTEP = 1712852617U;
+        static const AkUniqueID PLAYJUMP = 1717476791U;
+        static const AkUniqueID PLAYMAINMUSIC = 277487121U;
+        static const AkUniqueID PLAYTUTORIALMUSIC = 1808398206U;
     } // namespace EVENTS
 
     namespace BANKS

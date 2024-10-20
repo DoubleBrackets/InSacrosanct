@@ -3,7 +3,10 @@
 	<UserProjectSettingsInfo>
 		<UserProjectSettings Name="" ID="{CEC3B30A-A2D1-4C7A-BA35-5BB0F4CEC8EF}">
 			<PropertyList>
-				<Property Name="AudioFilesImporter\Path" Type="string" Value="Y:\Downloads\"/>
+				<Property Name="AudioFilesImporter\Path" Type="string" Value="Y:\Downloads\drive-download-20241020T073301Z-001\"/>
+				<Property Name="Event Action List\{291860FA-2BAD-4061-83BE-EFC72CCEA1B6}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{37452F7C-CC3E-4E51-A7CB-7AC72FE75B25}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Event Action List\{8FB96AE5-1220-4F38-B389-451F3258B286}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="Event Action List\{F41B6F7D-7C4F-42F5-A9D5-D4903C44B082}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="EventView\FilterMode1" Type="int32" Value="2"/>
 				<Property Name="ExternalSourcesInputPath" Type="string">
@@ -26,7 +29,12 @@
 				<Property Name="GenerateSoundBanks\x64_SelectedPlatforms" Type="string" Value="PdNKB0wyMkCgqHUcqc5vCC2f8qFxRf9HtoWT4lB/UJA="/>
 				<Property Name="GenerateSoundBanks\x64_SelectedSoundBanks" Type="string" Value="M/lMNtfGoECvPHflCYWbqA=="/>
 				<Property Name="HardwareController\CurrentSession" Type="string" Value="{00000000-0000-0000-0000-000000000000}"/>
+				<Property Name="Interactive Music\x64_{2109BA4B-6088-4B68-B21B-647AD8D5ED38} - SegmentEditorZoomInfo" Type="string" Value="AAAAAAAA8D8AAAAAAADwPwAAAMDw8mBAAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
+				<Property Name="Interactive Music\x64_{2A9B832B-5C37-4580-9641-E3C87581361B} - SegmentEditorZoomInfo" Type="string" Value="RU8D2i7TBkAAAAAAAADwP19DeQ2dICFAAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
+				<Property Name="Interactive Music\x64_{3829DF44-CA92-4736-A301-C01E836E98B7} - SegmentEditorZoomInfo" Type="string" Value="AAAAAAAA8D8AAAAAAADwP6OLLrpjfUJAAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
+				<Property Name="Interactive Music\x64_{59CC77A1-9C0C-414D-8EB2-73FD0D7EEA58} - SegmentEditorZoomInfo" Type="string" Value="AAAAAAAA8D8AAAAAAADwP+3qVLmIeDJAAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
 				<Property Name="Interactive Music\x64_{CFC5952A-905B-4718-B2C3-3DDAB3F4F643} - SegmentEditorZoomInfo" Type="string" Value="AAAAAAAA8D8AAAAAAADwP9BFF11slS1AAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
+				<Property Name="Interactive Music\x64_{D926455E-A258-4106-BF6F-0C1712A32123} - SegmentEditorZoomInfo" Type="string" Value="AAAAAAAA8D8AAAAAAADwPwAAAACMPjdAAAAAAAAA8D8AAAAAAAAAAAAAAAAAAAAA"/>
 				<Property Name="MeterView\LastObject1" Type="string" Value="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"/>
 				<Property Name="MeterView\MeterMode1" Type="int32" Value="1"/>
 				<Property Name="MeterView\MeterMode1Viewpoint0" Type="int32" Value="1"/>
@@ -37,6 +45,12 @@
 				<Property Name="MonitoringManager\GameObjectFilter\GameObjectFilterVersion" Type="int32" Value="1"/>
 				<Property Name="MonitoringManager\GameObjectFilter\GameObjectFiltersEnable" Type="bool" Value="True"/>
 				<Property Name="MonitoringManager\GameObjectFilter\x64_GameObjectFilters" Type="string" Value=""/>
+				<Property Name="Music Transition List\{10D61F4E-97A3-49D3-83D4-97DE4840D18E}\Scroll Position" Type="int32" Value="0"/>
+				<Property Name="Music Transition List\{10D61F4E-97A3-49D3-83D4-97DE4840D18E}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Music Transition List\{36DE040E-464B-4C43-9D8A-D54050CBE93D}\Scroll Position" Type="int32" Value="0"/>
+				<Property Name="Music Transition List\{36DE040E-464B-4C43-9D8A-D54050CBE93D}\x64_Expand States" Type="string" Value=""/>
+				<Property Name="Music Transition List\{86EFDECB-8B4C-44C6-B19F-F5D198310876}\Scroll Position" Type="int32" Value="0"/>
+				<Property Name="Music Transition List\{86EFDECB-8B4C-44C6-B19F-F5D198310876}\x64_Expand States" Type="string" Value=""/>
 				<Property Name="ObjectTabPanel\x64_CurrentObjects_{0407E542-9E7F-4E7B-B4FD-FC3E64B71319}" Type="string" Value=""/>
 				<Property Name="ObjectTabPanel\x64_CurrentObjects_{618C1FF9-37D4-45A7-AF0A-E2D511E44707}" Type="string" Value=""/>
 				<Property Name="ObjectTabPanel\x64_CurrentObjects_{826CEF9F-ACB3-45D2-8319-9C9994E4CA5C}" Type="string" Value=""/>

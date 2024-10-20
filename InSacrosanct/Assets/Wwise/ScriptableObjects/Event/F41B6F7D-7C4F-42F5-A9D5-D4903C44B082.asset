@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14f113e72b5c2428580328f87431602e, type: 3}
   m_Name: F41B6F7D-7C4F-42F5-A9D5-D4903C44B082
   m_EditorClassIdentifier: 
-  objectName: playMusic
-  id: 417627684
+  objectName: playMainMusic
+  id: 277487121
   guid: F41B6F7D-7C4F-42F5-A9D5-D4903C44B082

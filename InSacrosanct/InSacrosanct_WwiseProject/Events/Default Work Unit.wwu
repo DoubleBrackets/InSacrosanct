@@ -5,12 +5,45 @@
 			<ChildrenList>
 				<Folder Name="Sounds" ID="{FDDF37C6-6671-48AA-BD65-0745467018C1}" ShortID="501609495">
 					<ChildrenList>
-						<Event Name="playMusic" ID="{F41B6F7D-7C4F-42F5-A9D5-D4903C44B082}">
+						<Event Name="playMainMusic" ID="{F41B6F7D-7C4F-42F5-A9D5-D4903C44B082}">
 							<ChildrenList>
 								<Action Name="" ID="{272FDC4D-6C5F-4BCD-82D0-1A5BA9A236A7}" ShortID="642790850">
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Main Music" ID="{86EFDECB-8B4C-44C6-B19F-F5D198310876}" WorkUnitID="{45D20676-B933-4B3B-9B3D-E40635F6099F}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="playTutorialMusic" ID="{8FB96AE5-1220-4F38-B389-451F3258B286}">
+							<ChildrenList>
+								<Action Name="" ID="{1C7A4BC3-18DF-4648-98AD-237A53559156}" ShortID="515380890">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Tutorial Music" ID="{F8A22AC9-D7B8-4713-A985-B2222F3BE8E8}" WorkUnitID="{45D20676-B933-4B3B-9B3D-E40635F6099F}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="playFootstep" ID="{291860FA-2BAD-4061-83BE-EFC72CCEA1B6}">
+							<ChildrenList>
+								<Action Name="" ID="{0AABA146-D0FB-44EA-9E90-034543814F9B}" ShortID="481171869">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Footstep" ID="{47FF1605-842E-463F-BA43-F5F8550C77B2}" WorkUnitID="{12B32864-9494-4D7A-A8B7-B27E01B926F9}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="playJump" ID="{37452F7C-CC3E-4E51-A7CB-7AC72FE75B25}">
+							<ChildrenList>
+								<Action Name="" ID="{D532EB38-1C84-4144-92DC-345AA80D1C25}" ShortID="679150873">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Jump" ID="{E57830CE-1A23-40C0-A502-2720F5B68EF4}" WorkUnitID="{12B32864-9494-4D7A-A8B7-B27E01B926F9}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
