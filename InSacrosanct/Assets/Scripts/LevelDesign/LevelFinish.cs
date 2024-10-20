@@ -1,4 +1,3 @@
-using System;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -8,14 +7,29 @@ public class LevelFinish : MonoBehaviour
 {
     [SerializeField]
     private ServiceLocator _serviceLocator;
-    
+
     [SerializeField]
     private string _nextLevelName;
 
     [SerializeField]
+    private int _nextLevelIndex;
+
+    [SerializeField]
     private PlayableDirector _director;
 
-    private bool _ended = false;
+    private bool _ended;
+    private LocatedService<CoreService> _core;
+
+    private void Awake()
+    {
+        _core = new LocatedService<CoreService>(_serviceLocator);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawWireCube(transform.position, transform.localScale);
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -37,15 +51,11 @@ public class LevelFinish : MonoBehaviour
                 await UniTask.Yield();
             }
         }
-        
-        token.ThrowIfCancellationRequested();
-        
-        _serviceLocator.Get<LevelLoader>().LoadLevelAsync(_nextLevelName);
-    }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireCube(transform.position, transform.localScale);
+        _core.Instance.CurrentLevel = _nextLevelIndex;
+
+        token.ThrowIfCancellationRequested();
+
+        _core.Instance.LoadLevel(_nextLevelName);
     }
 }

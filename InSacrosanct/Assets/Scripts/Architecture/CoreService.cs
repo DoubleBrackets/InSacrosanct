@@ -19,6 +19,8 @@ public class CoreService : MonoBehaviour, ILocatableService
     [SerializeField]
     private PlayableDirector _deathDirector;
 
+    public int CurrentLevel { get; set; }
+
     public event Action<float> CoreUpdate;
     public event Action<float> CoreFixedUpdate;
 
@@ -80,5 +82,10 @@ public class CoreService : MonoBehaviour, ILocatableService
             _deathDirector.Stop();
             _deathDirector.gameObject.SetActive(false);
         }
+    }
+
+    public void LoadLevel(string nextLevelName)
+    {
+        _levelLoader.LoadLevelAsync(nextLevelName).Forget();
     }
 }

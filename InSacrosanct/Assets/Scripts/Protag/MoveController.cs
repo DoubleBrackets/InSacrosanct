@@ -4,6 +4,12 @@ using UnityEngine.Serialization;
 
 public class MoveController : MonoBehaviour
 {
+    public enum State
+    {
+        Default,
+        NoMove
+    }
+
     [Serializable]
     private struct MoveSettings
     {
@@ -27,6 +33,9 @@ public class MoveController : MonoBehaviour
         public float SurfCastDist;
         public LayerMask SurfMask;
 
+        [Tooltip("Max angle of surfing surface normal from horizontal")]
+        public float SurfSurfaceAngleRange;
+
         public float SurfGravity;
         public float SurfInitiateAngleRange;
 
@@ -44,12 +53,6 @@ public class MoveController : MonoBehaviour
         public float SurfMaintainSpeedRequirement;
     }
 
-    public enum State
-    {
-        Default,
-        NoMove
-    }
-
     [Header("Dependencies")]
 
     [SerializeField]
@@ -61,8 +64,17 @@ public class MoveController : MonoBehaviour
     private MoveSettings _moveSettings;
 
     private bool IsGrounded => (_characterController.isGrounded || _castGround) && _forceUngroundTimer <= 0f;
-    public bool IsSurfing => _isSurfing;
-    public int SurfSide => _surfSide;
+    public bool IsSurfing { get; private set; }
+
+    public int SurfSide { get; private set; }
+
+    public Vector3 Position => _characterController.transform.position;
+
+    public Vector3 Velocity
+    {
+        get => _velocity;
+        set => _velocity = value;
+    }
 
     private Vector3 _velocity;
     private Vector3 _groundNormal;
@@ -77,15 +89,38 @@ public class MoveController : MonoBehaviour
 
     private bool _surfContact;
     private Vector3 _surfNormal;
-    private bool _isSurfing;
     private bool _wasSurfing;
-    private int _surfSide;
 
     private float _surfDebounceTimer;
 
     private void Awake()
     {
         DebugHUD.AddString(DebugString);
+    }
+
+    private void OnDestroy()
+    {
+        DebugHUD.RemoveString(DebugString);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Vector3 rayPos = _moveSettings.GroundSweepOrigin.position;
+        Gizmos.DrawRay(rayPos, Vector3.down * _moveSettings.SweepDistance);
+        Gizmos.color = Color.green;
+        Gizmos.DrawRay(_groundHitPoint, _groundNormal);
+
+        // draw surf capsule
+        Gizmos.color = Color.blue;
+        Vector3 pos = _moveSettings.SurfRaycastCenter.position;
+        Gizmos.DrawLine(pos + Vector3.right * _moveSettings.SurfCastDist,
+            pos - Vector3.right * _moveSettings.SurfCastDist);
+    }
+
+    public void ForceUnground()
+    {
+        _forceUngroundTimer = 0.2f;
     }
 
     public void TickMovement(Vector2 rawInput, bool jumpInput, FpCamera fpCamera)
@@ -111,7 +146,7 @@ public class MoveController : MonoBehaviour
             Vector3 hVelocity = Vector3.ProjectOnPlane(_velocity, _groundNormal);
 
             float finalAccel = Vector3.Dot(hVelocity, desiredHVel) <= 0
-                ? _moveSettings.Friction
+                ? IsGrounded ? _moveSettings.Friction : 0
                 : _moveSettings.Acceleration;
 
             Vector3 newHVel = Vector3.Lerp(
@@ -126,7 +161,7 @@ public class MoveController : MonoBehaviour
         bool surfAim = Mathf.Abs(Vector3.Angle(_surfNormal, fpCamera.CameraForward) - 90f) <
                        _moveSettings.SurfInitiateAngleRange / 2f;
 
-        _isSurfing = false;
+        IsSurfing = false;
         bool sufficientSpeed = _velocity.magnitude >
                                (_wasSurfing
                                    ? _moveSettings.SurfMaintainSpeedRequirement
@@ -151,7 +186,7 @@ public class MoveController : MonoBehaviour
 
             _velocity += -_surfNormal * _moveSettings.SurfStickForce;
 
-            _isSurfing = true;
+            IsSurfing = true;
         }
         else if (_wasSurfing)
         {
@@ -161,7 +196,7 @@ public class MoveController : MonoBehaviour
             _surfDebounceTimer = _moveSettings.SurfDebounceTime;
         }
 
-        _wasSurfing = _isSurfing;
+        _wasSurfing = IsSurfing;
 
         // Gravity
         if (!IsGrounded)
@@ -206,26 +241,6 @@ public class MoveController : MonoBehaviour
         _velocity = _characterController.velocity;
     }
 
-    private void OnDestroy()
-    {
-        DebugHUD.RemoveString(DebugString);
-    }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Vector3 rayPos = _moveSettings.GroundSweepOrigin.position;
-        Gizmos.DrawRay(rayPos, Vector3.down * _moveSettings.SweepDistance);
-        Gizmos.color = Color.green;
-        Gizmos.DrawRay(_groundHitPoint, _groundNormal);
-
-        // draw surf capsule
-        Gizmos.color = Color.blue;
-        Vector3 pos = _moveSettings.SurfRaycastCenter.position;
-        Gizmos.DrawLine(pos + Vector3.right * _moveSettings.SurfCastDist,
-            pos - Vector3.right * _moveSettings.SurfCastDist);
-    }
-
     private string DebugString()
     {
         return $"Velocity: {_velocity} " +
@@ -234,7 +249,7 @@ public class MoveController : MonoBehaviour
                $"\n Ground Normal: {_groundNormal}" +
                $"\n Did Snap: {_didSnap}" +
                $"\n Surf Contact: {_surfContact}" +
-               $"\n Surf Aiming: {_isSurfing}" +
+               $"\n Surf Aiming: {IsSurfing}" +
                $"\n Surfing: {IsSurfing}";
     }
 
@@ -289,17 +304,18 @@ public class MoveController : MonoBehaviour
         if (hitLeft || hitRight)
         {
             surfNormal = hitRight ? surfHitRight.normal : surfHitLeft.normal;
-            _surfSide = hitRight ? 1 : -1;
+            SurfSide = hitRight ? 1 : -1;
         }
 
-        bool overHang = Vector3.Dot(surfNormal, Vector3.up) < 0f;
-        if (!overHang)
+        float angleFromHorizontal = Mathf.Abs(Vector3.Angle(surfNormal, Vector3.up) - 90);
+        bool angleInRange = angleFromHorizontal < _moveSettings.SurfSurfaceAngleRange;
+
+        if (angleInRange)
         {
             _surfNormal = surfNormal;
         }
 
-
-        _surfContact = hitRight ^ hitLeft && !overHang;
+        _surfContact = hitRight ^ hitLeft && angleInRange;
     }
 
     public float GetCurrentSpeedFactor()

@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Timeline;
 
@@ -7,7 +9,8 @@ public class Protag : MonoBehaviour, ILocatableService
     {
         Default,
         NoMove,
-        Dead
+        Dead,
+        UsingGear
     }
 
     [Header("Dependencies")]
@@ -23,6 +26,17 @@ public class Protag : MonoBehaviour, ILocatableService
 
     [SerializeField]
     private FpCamera _fpCamera;
+
+    [SerializeField]
+    private GearRegistry _gearRegistry;
+
+    [SerializeField]
+    private GearHandler _gearHandler;
+
+    public MoveController MoveController => _moveController;
+
+    public Vector3 Pos => _moveController.Position;
+    public FpCamera FpCamera => _fpCamera;
 
     private LocatedService<InputProvider> _inputProvider;
     private LocatedService<CoreService> _coreService;
@@ -43,6 +57,13 @@ public class Protag : MonoBehaviour, ILocatableService
         _coreService = new LocatedService<CoreService>(_serviceLocator);
     }
 
+    private void Start()
+    {
+        List<GearBase> equippedGears = _gearRegistry.GetGearEntries(_coreService.Instance.CurrentLevel).ToList();
+
+        _gearHandler.Initialize(this, _inputProvider.Instance, equippedGears);
+    }
+
     private void Update()
     {
         Vector2 rawInput = _inputProvider.Instance.GetMoveInput();
@@ -51,11 +72,28 @@ public class Protag : MonoBehaviour, ILocatableService
 
         if (_state == ProtagState.Default)
         {
+            _gearHandler.Tick();
+
+            if (_gearHandler.IsUsing)
+            {
+                _state = ProtagState.UsingGear;
+                return;
+            }
+
             _moveController.TickMovement(rawInput, jumpPressed, _fpCamera);
         }
         else
         {
             _moveController.TickMovement(Vector2.zero, false, _fpCamera);
+        }
+
+        if (_state == ProtagState.UsingGear)
+        {
+            _gearHandler.Tick();
+            if (!_gearHandler.IsUsing)
+            {
+                _state = ProtagState.Default;
+            }
         }
 
         if (_moveController.IsSurfing)
@@ -82,11 +120,18 @@ public class Protag : MonoBehaviour, ILocatableService
     public void SetToCinematicState(bool setState)
     {
         _state = setState ? ProtagState.NoMove : ProtagState.Default;
+        _gearHandler.UnequipGear();
     }
 
     public void Kill(TimelineAsset deathTimeline)
     {
+        if (_state == ProtagState.Dead)
+        {
+            return;
+        }
+
         _state = ProtagState.Dead;
         _coreService.Instance.Death(deathTimeline);
+        _gearHandler.UnequipGear();
     }
 }

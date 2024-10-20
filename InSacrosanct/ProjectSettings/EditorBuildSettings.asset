@@ -6,7 +6,10 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Level1.unity
+    path: Assets/Scenes/1 - Basics.unity
+    guid: fd46a49309408f64398600ca0640753e
+  - enabled: 1
+    path: Assets/Scenes/3 - Shattered Core.unity
     guid: b9446a230a3275b43b602a79436a9027
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: ad41fa66879b6d743ac273e2c3a16eeb, type: 2}

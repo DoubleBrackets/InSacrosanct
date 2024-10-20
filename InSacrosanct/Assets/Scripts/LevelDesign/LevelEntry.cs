@@ -1,4 +1,3 @@
-using System;
 using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
@@ -8,10 +7,10 @@ public class LevelEntry : MonoBehaviour
 {
     [SerializeField]
     private PlayableDirector _director;
-    
+
     [SerializeField]
     private ServiceLocator _serviceLocator;
-    
+
     private LocatedService<Protag> _protag;
 
     private void Awake()
@@ -23,7 +22,7 @@ public class LevelEntry : MonoBehaviour
     {
         StartLevel(gameObject.GetCancellationTokenOnDestroy()).Forget();
     }
-    
+
     private async UniTaskVoid StartLevel(CancellationToken token)
     {
         _protag.Instance.SetToCinematicState(true);
@@ -36,9 +35,9 @@ public class LevelEntry : MonoBehaviour
                 await UniTask.Yield();
             }
         }
-        
+
         token.ThrowIfCancellationRequested();
-        
+
         _protag.Instance.SetToCinematicState(false);
     }
 }
