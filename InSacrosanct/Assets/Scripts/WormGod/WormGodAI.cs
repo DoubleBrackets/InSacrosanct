@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Threading;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 public class WormGodAI : MonoBehaviour
@@ -56,6 +58,8 @@ public class WormGodAI : MonoBehaviour
 
     private readonly List<WormGodSegment> _bodySegments = new();
 
+    private readonly bool finalDeath = false;
+
     private WormGodSegment _head;
 
     private LocatedService<Protag> _protag;
@@ -74,15 +78,43 @@ public class WormGodAI : MonoBehaviour
 
     private void Update()
     {
+        if (this.finalDeath)
+        {
+            return;
+        }
+
         _head.Tick();
+        var finalDeath = true;
         foreach (WormGodSegment segment in _bodySegments)
         {
             segment.Tick();
+            if (segment.Killable && segment.Alive)
+            {
+                finalDeath = false;
+            }
+        }
+
+        if (finalDeath)
+        {
+            FinalDeath(gameObject.GetCancellationTokenOnDestroy());
         }
 
         Steering();
         ResolveBodySegments();
         Effects();
+    }
+
+    private async UniTaskVoid FinalDeath(CancellationToken ct)
+    {
+        for (int i = _bodySegments.Count - 1; i >= 0; i++)
+        {
+            await UniTask.Delay(350);
+            ct.ThrowIfCancellationRequested();
+            _bodySegments[i].FinalDeath();
+        }
+
+        await UniTask.Delay(600);
+        _head.FinalDeath();
     }
 
     private void Effects()

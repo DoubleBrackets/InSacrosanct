@@ -71,6 +71,8 @@ public class CoreService : MonoBehaviour, ILocatableService
             token.ThrowIfCancellationRequested();
 
             await _levelLoader.ReloadLevelAsync();
+
+            token.ThrowIfCancellationRequested();
         }
         catch (Exception e)
         {

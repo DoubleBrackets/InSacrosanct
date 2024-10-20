@@ -53,7 +53,7 @@ MonoBehaviour:
     SegmentAngleConstraint: 0
     SegmentCount: 25
     SteeringForce: 25
-    MaxSteeringAngle: 33
+    MaxSteeringAngle: 31
     TopSpeed: 70
     GravityAccel: -20
     TargetOffset: {x: 0, y: 11, z: 0}

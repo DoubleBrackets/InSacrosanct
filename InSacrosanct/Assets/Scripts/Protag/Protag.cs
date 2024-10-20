@@ -137,5 +137,6 @@ public class Protag : MonoBehaviour, ILocatableService
         _gearHandler.UnequipGear();
 
         AkSoundEngine.PostEvent("playDeath", gameObject);
+        AudioManager.Instance.StopMusic();
     }
 }

@@ -749,16 +749,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7128995851904455581}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5021edfcebe34482aa5f93b5f12c0e77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  footstepDelay: 0
-  player: {fileID: 0}
-  inputProvider: {fileID: 901350345446428389}
-  bank: {fileID: 380475584370024649}
-  serviceProvider: {fileID: 11400000, guid: d925fe932aee41c4987eaf483d9a66ee, type: 2}
 --- !u!1 &8150972694093361135
 GameObject:
   m_ObjectHideFlags: 0

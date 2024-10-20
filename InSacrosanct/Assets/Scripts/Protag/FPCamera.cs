@@ -11,8 +11,10 @@ public class FpCamera : MonoBehaviour
         [FormerlySerializedAs("sensitivity")]
         [Header("Look")]
         public float Sensitivity;
+
         [FormerlySerializedAs("minTiltDegrees")]
         public float MinTiltDegrees;
+
         [FormerlySerializedAs("maxTiltDegrees")]
         public float MaxTiltDegrees;
     }
@@ -21,7 +23,7 @@ public class FpCamera : MonoBehaviour
 
     [SerializeField]
     private Transform _cameraTransform;
-    
+
     [SerializeField]
     private CinemachineCamera _cinemachineCamera;
 
@@ -35,11 +37,11 @@ public class FpCamera : MonoBehaviour
 
     private float _xRotation;
     private float _yRotation;
-    
+
     private float _desiredNormalizedFOV;
-    
+
     private float _desiredDutchTilt;
-    
+
     private void Awake()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -48,17 +50,25 @@ public class FpCamera : MonoBehaviour
     public void TickCamera(Vector2 lookInput)
     {
         Look(lookInput);
+
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            _cameraSettings.Sensitivity += 0.2f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            _cameraSettings.Sensitivity -= 0.2f;
+        }
     }
-    
+
     public Vector3 TransformDirection(Vector3 vector)
     {
         return _cameraTransform.TransformDirection(vector);
     }
-    
-    
+
     private void Look(Vector2 lookInput)
     {
-
         float mouseX = lookInput.x * _cameraSettings.Sensitivity * Time.deltaTime;
         float mouseY = lookInput.y * _cameraSettings.Sensitivity * Time.deltaTime;
 
@@ -69,7 +79,4 @@ public class FpCamera : MonoBehaviour
 
         _cameraTransform.localRotation = Quaternion.Euler(_xRotation, _yRotation, 0f);
     }
-    
-
-    
 }
