@@ -119,7 +119,7 @@ public class WormGodAI : MonoBehaviour
 
         _head.FinalDeath();
 
-        await UniTask.Delay(100);
+        await UniTask.Delay(1000);
         _protag.Instance.FPCameraEffects.SetWormImpulse(0);
 
         Destroy(gameObject);
