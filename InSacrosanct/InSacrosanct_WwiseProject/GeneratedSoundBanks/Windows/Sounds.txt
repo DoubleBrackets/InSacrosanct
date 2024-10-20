@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	417627684	playMusic			\Default Work Unit\playMusic	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	284009548	GDAC_JamDraft2	Y:\Desktop\GitHub\InSacrosanct\InSacrosanct\InSacrosanct_WwiseProject\.cache\Windows\SFX\GDAC_JamDraft2_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\Main Music\GDAC_JamDraft2\GDAC_JamDraft2		14418016
+

@@ -1,0 +1,81 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "150",
+  "RootPaths": {
+   "ProjectRoot": "../..",
+   "SourceFilesRoot": "../../.cache/Windows",
+   "SoundBanksRoot": ".",
+   "ExternalSourcesInputFile": "",
+   "ExternalSourcesOutputRoot": "."
+  },
+  "DialogueEvents": [],
+  "SoundBanks": [
+   {
+    "Id": "1355168291",
+    "Type": "User",
+    "Language": "SFX",
+    "Hash": "{B6CBD692-12EC-CDBA-0932-48F63C40C91F}",
+    "ShortName": "Init",
+    "Path": "Init.bnk",
+    "Plugins": {
+     "AudioDevices": [
+      {
+       "Id": "2317455096",
+       "Name": "No_Output",
+       "LibName": "No Output",
+       "LibId": "11862023"
+      },
+      {
+       "Id": "3859886410",
+       "Name": "System",
+       "LibName": "System",
+       "LibId": "11403271"
+      }
+     ]
+    },
+    "Busses": [
+     {
+      "Id": "3803692087",
+      "Name": "Master Audio Bus"
+     }
+    ]
+   },
+   {
+    "Id": "1492361653",
+    "Type": "User",
+    "Language": "SFX",
+    "Hash": "{9BB4C624-169B-9A3B-9092-476BC79F026D}",
+    "ShortName": "Sounds",
+    "Path": "Sounds.bnk",
+    "Media": [
+     {
+      "Id": "284009548",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "GDAC_JamDraft2.wav",
+      "CachePath": "SFX/GDAC_JamDraft2_FBC78EF0.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "417627684",
+      "Name": "playMusic",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0",
+      "MediaRefs": [
+       {
+        "Id": "284009548"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{75E44E4B-596A-CF4C-53B6-58D31276AF49}"
+ }
+}

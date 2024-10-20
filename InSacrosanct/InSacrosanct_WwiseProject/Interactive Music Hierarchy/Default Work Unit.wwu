@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{45D20676-B933-4B3B-9B3D-E40635F6099F}" SchemaVersion="119">
+	<InteractiveMusic>
+		<WorkUnit Name="Default Work Unit" ID="{45D20676-B933-4B3B-9B3D-E40635F6099F}" PersistMode="Standalone">
+			<ChildrenList>
+				<MusicPlaylistContainer Name="Main Music" ID="{86EFDECB-8B4C-44C6-B19F-F5D198310876}" ShortID="1036529954">
+					<PropertyList>
+						<Property Name="Tempo" Type="Real64" Value="132"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B989FA84-7907-4F37-9BC7-1D121F6B1CB6}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{164F1ABA-2E16-4997-A399-827FF5423095}"/>
+						</Reference>
+						<Reference Name="PlaylistRoot">
+							<Custom>
+								<MusicPlaylistItem Name="" ID="{66A125DE-AA10-484A-8AC8-DCD6EBB33AA9}" ShortID="487040200">
+									<ChildrenList>
+										<MusicPlaylistItem Name="" ID="{4D2B6A49-9A0A-485C-99D8-6367ED3CF529}" ShortID="576803995">
+											<PropertyList>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Segment">
+													<ObjectRef Name="GDAC_JamDraft2" ID="{CFC5952A-905B-4718-B2C3-3DDAB3F4F643}" WorkUnitID="{45D20676-B933-4B3B-9B3D-E40635F6099F}"/>
+												</Reference>
+											</ReferenceList>
+										</MusicPlaylistItem>
+									</ChildrenList>
+								</MusicPlaylistItem>
+							</Custom>
+						</Reference>
+						<Reference Name="TransitionRoot">
+							<Custom>
+								<MusicTransition Name="Root" ID="{BB9D3CD4-059B-41C8-902E-0D192E69CBAA}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicTransition Name="Transition" ID="{B8620074-702D-47C7-94B7-8774FC7E9937}">
+											<TransitionInfo/>
+										</MusicTransition>
+									</ChildrenList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</Custom>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicSegment Name="GDAC_JamDraft2" ID="{CFC5952A-905B-4718-B2C3-3DDAB3F4F643}" ShortID="20191513">
+							<PropertyList>
+								<Property Name="EndPosition" Type="Real64" Value="81734.2403628118"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-22</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{B989FA84-7907-4F37-9BC7-1D121F6B1CB6}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{164F1ABA-2E16-4997-A399-827FF5423095}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<MusicTrack Name="GDAC_JamDraft2" ID="{6C348AA1-E5D4-488D-908E-27337700022A}" ShortID="579983403">
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{164F1ABA-2E16-4997-A399-827FF5423095}"/>
+										</Reference>
+										<Reference Name="TransitionRoot">
+											<Custom>
+												<MusicTransition Name="Root" ID="{9719F5DA-2FB1-4376-ACEC-72D5987A3FF1}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</Custom>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="GDAC_JamDraft2" ID="{A3925958-720B-4B0C-AE62-AFAA778BF0C8}">
+											<Language>SFX</Language>
+											<AudioFile>GDAC_JamDraft2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="284009548"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{7DE772CF-D95C-471D-8703-C3F5CEAAEB53}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="GDAC_JamDraft2" ID="{FA588B23-516E-4585-ABE2-856734958269}">
+																			<PropertyList>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="81734.2403628118"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="GDAC_JamDraft2" ID="{A3925958-720B-4B0C-AE62-AFAA778BF0C8}"/>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Cues">
+									<Reference>
+										<Local>
+											<MusicCue Name="Entry Cue" ID="{0E26E1E2-762A-459D-B4BE-DB58B7001EEB}"/>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<MusicCue Name="Exit Cue" ID="{8B2F8925-E7C5-4636-86A6-F0A4537DDD6D}">
+												<PropertyList>
+													<Property Name="CueType" Type="int16" Value="1"/>
+													<Property Name="TimeMs" Type="Real64" Value="58181.8181818182"/>
+												</PropertyList>
+											</MusicCue>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</MusicSegment>
+					</ChildrenList>
+				</MusicPlaylistContainer>
+			</ChildrenList>
+		</WorkUnit>
+	</InteractiveMusic>
+</WwiseDocument>
