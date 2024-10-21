@@ -31,6 +31,8 @@ public class CoreService : MonoBehaviour, ILocatableService
             return;
         }
 
+        Application.targetFrameRate = 60;
+
         _serviceLocator.Register(this);
     }
 

@@ -102,6 +102,8 @@ public class MoveController : MonoBehaviour
 
     private float _surfDebounceTimer;
 
+    private Vector3 _velBeforeMove;
+
     private void Awake()
     {
         DebugHUD.AddString(DebugString);
@@ -264,6 +266,7 @@ public class MoveController : MonoBehaviour
 
         // Move and Update Velocity
         _wasGrounded = IsGrounded;
+        _velBeforeMove = _velocity;
         _characterController.Move(_velocity * Time.deltaTime);
         _velocity = _characterController.velocity;
 
@@ -294,6 +297,7 @@ public class MoveController : MonoBehaviour
     {
         return $"Velocity: {_velocity} " +
                $"\n Speed: {_velocity.magnitude}" +
+               $"\n VelBefore: {_velBeforeMove}" +
                $"\n Grounded: {IsGrounded}" +
                $"\n Ground Normal: {_groundNormal}" +
                $"\n Did Snap: {_didSnap}" +

@@ -19,7 +19,7 @@ public class FpCamera : MonoBehaviour
         public float MaxTiltDegrees;
     }
 
-    public static float Sensitivity = 30f;
+    public static float Sensitivity = 20f;
 
     [Header("Dependencies")]
 
@@ -56,13 +56,15 @@ public class FpCamera : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            Sensitivity -= 5f;
+            Sensitivity -= 2.5f;
         }
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Sensitivity += 5f;
+            Sensitivity += 2.5f;
         }
+
+        Sensitivity = Mathf.Clamp(Sensitivity, 0f, 1000f);
     }
 
     public Vector3 TransformDirection(Vector3 vector)

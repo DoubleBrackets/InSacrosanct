@@ -365,7 +365,7 @@ CharacterController:
   m_SlopeLimit: 75
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
+  m_MinMoveDistance: 0.00001
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4875430339255259812
 GameObject:

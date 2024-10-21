@@ -6,6 +6,16 @@ public class DebugHUD : MonoBehaviour
 {
     private static readonly List<Func<string>> _strings = new();
 
+    private bool _show;
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            _show = !_show;
+        }
+    }
+
     private void OnDestroy()
     {
         _strings.Clear();
@@ -13,7 +23,11 @@ public class DebugHUD : MonoBehaviour
 
     private void OnGUI()
     {
-#if UNITY_EDITOR
+        if (!_show)
+        {
+            return;
+        }
+
         var y = 10;
         for (var i = 0; i < _strings.Count; i++)
         {
@@ -22,7 +36,6 @@ public class DebugHUD : MonoBehaviour
             GUI.Label(new Rect(10, y, 400, h), str);
             y += h;
         }
-#endif
     }
 
     private void OnPostRender()
