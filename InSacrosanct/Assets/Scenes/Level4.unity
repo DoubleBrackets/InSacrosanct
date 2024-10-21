@@ -13383,7 +13383,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c62378874df90fe428ac5f6684d8b63b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _boundary: -75
+  _boundary: -125
   _serviceLocator: {fileID: 11400000, guid: d925fe932aee41c4987eaf483d9a66ee, type: 2}
   _deathTimeline: {fileID: 11400000, guid: 5cda4dd45211be640b3b392f1c8b4c33, type: 2}
 --- !u!4 &1664715080
@@ -17276,46 +17276,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2931375739474547148, guid: c7fe5c33926847c4e81d7300d4847247, type: 3}
-      propertyPath: _headPrefab
-      value: 
-      objectReference: {fileID: 1773020240224448217, guid: c4444188a0f16fd4badb5a562885a14e, type: 3}
-    - target: {fileID: 2931375739474547148, guid: c7fe5c33926847c4e81d7300d4847247, type: 3}
-      propertyPath: _tailPrefab
-      value: 
-      objectReference: {fileID: 1773020240224448217, guid: 63cfcc9edb5a423499031f5a6f18c57c, type: 3}
-    - target: {fileID: 2931375739474547148, guid: c7fe5c33926847c4e81d7300d4847247, type: 3}
-      propertyPath: _segmentPrefab
-      value: 
-      objectReference: {fileID: 1773020240224448217, guid: 9bb312c556662fc45840c2b93dc62b48, type: 3}
-    - target: {fileID: 2931375739474547148, guid: c7fe5c33926847c4e81d7300d4847247, type: 3}
-      propertyPath: _config.TopSpeed
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 2931375739474547148, guid: c7fe5c33926847c4e81d7300d4847247, type: 3}
-      propertyPath: _config.SegmentCount
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2931375739474547148, guid: c7fe5c33926847c4e81d7300d4847247, type: 3}
-      propertyPath: _config.ShakeMaxRange
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2931375739474547148, guid: c7fe5c33926847c4e81d7300d4847247, type: 3}
-      propertyPath: _config.ShakeMinRange
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2931375739474547148, guid: c7fe5c33926847c4e81d7300d4847247, type: 3}
-      propertyPath: _config.SteeringForce
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 2931375739474547148, guid: c7fe5c33926847c4e81d7300d4847247, type: 3}
-      propertyPath: _config.MaxSteeringAngle
-      value: 55
-      objectReference: {fileID: 0}
-    - target: {fileID: 2931375739474547148, guid: c7fe5c33926847c4e81d7300d4847247, type: 3}
-      propertyPath: _config.SegmentDistanceConstraint
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 3025745793997094411, guid: c7fe5c33926847c4e81d7300d4847247, type: 3}
       propertyPath: m_Name
       value: WormBaby

@@ -57,5 +57,5 @@ MonoBehaviour:
     TopSpeed: 45
     GravityAccel: -25
     TargetOffset: {x: 0, y: 3, z: 0}
-    ShakeMaxRange: 1
-    ShakeMinRange: 0
+    ShakeMaxRange: 10
+    ShakeMinRange: 1
