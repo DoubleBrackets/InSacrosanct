@@ -269,10 +269,10 @@ MonoBehaviour:
     SurfGravity: -25
     SurfInitiateAngleRange: 65
     SurfSteeringSpeed: 70
-    SurfJumpHeight: 2.5
+    SurfJumpHeight: 4
     SurfStickForce: 15
     SurfEjectForce: 8
-    SurfEjectForceForward: 10
+    SurfEjectForceForward: 13
     SurfDebounceTime: 0.5
     SurfEnterSpeedRequirement: 17
     SurfMaintainSpeedRequirement: 8

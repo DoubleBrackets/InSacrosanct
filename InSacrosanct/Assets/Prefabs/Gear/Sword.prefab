@@ -254,7 +254,7 @@ MonoBehaviour:
   _maxAmmo: 3
   _staticCooldown: 0.35
   _recoilVelocity: 50
-  _distance: 18
+  _distance: 20
   _targetMask:
     serializedVersion: 2
     m_Bits: 256
