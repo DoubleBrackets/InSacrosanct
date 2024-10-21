@@ -51,11 +51,13 @@ MonoBehaviour:
   _config:
     SegmentDistanceConstraint: 10
     SegmentAngleConstraint: 0
-    SegmentCount: 3
-    SteeringForce: 11
-    MaxSteeringAngle: 55
+    SegmentCount: 5
+    SteeringForce: 20
+    MaxSteeringAngle: 35
     TopSpeed: 45
     GravityAccel: -25
     TargetOffset: {x: 0, y: 3, z: 0}
-    ShakeMaxRange: 10
-    ShakeMinRange: 1
+    FakeGroundY: -25
+    ShakeMaxRange: 75
+    ShakeMinRange: 5
+    ShakeMultiplier: 0.8

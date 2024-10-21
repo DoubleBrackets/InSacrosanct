@@ -13,6 +13,7 @@ public class DebugHUD : MonoBehaviour
 
     private void OnGUI()
     {
+#if UNITY_EDITOR
         var y = 10;
         for (var i = 0; i < _strings.Count; i++)
         {
@@ -21,6 +22,7 @@ public class DebugHUD : MonoBehaviour
             GUI.Label(new Rect(10, y, 400, h), str);
             y += h;
         }
+#endif
     }
 
     private void OnPostRender()

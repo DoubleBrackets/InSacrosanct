@@ -5027,7 +5027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b5e57c1057e0b624eb1e03c179dc3ab8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _anchorPoint: {fileID: 0}
+  _anchorPoint: {fileID: 6717776938412669799}
   _settings:
     TerrainCheckRadius: 20
     TerrainLayer:

@@ -4945,7 +4945,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _anchorPoint: {fileID: 9041681397473536259}
   _settings:
-    TerrainCheckRadius: 20
+    TerrainCheckRadius: 50
     TerrainLayer:
       serializedVersion: 2
       m_Bits: 64
@@ -4954,6 +4954,7 @@ MonoBehaviour:
     AliveVisuals: {fileID: 8225211651014314859}
     DeadVisuals: {fileID: 8152051294991736002}
     FinalDeathParticles: {fileID: 3501606651567277482}
+    LookAtTarget: {fileID: 0}
 --- !u!114 &7396623246620130166
 MonoBehaviour:
   m_ObjectHideFlags: 0

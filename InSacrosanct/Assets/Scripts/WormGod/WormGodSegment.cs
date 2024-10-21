@@ -42,6 +42,8 @@ public class WormGodSegment : MonoBehaviour, IKillable
 
     private bool _isInTerrain;
 
+    private float _fakeGroundY;
+
     private void Awake()
     {
         _settings.AliveVisuals.SetActive(true);
@@ -50,11 +52,11 @@ public class WormGodSegment : MonoBehaviour, IKillable
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = IsInTerrain() ? Color.green : Color.red;
+        Gizmos.color = IsInTerrain(_fakeGroundY) ? Color.green : Color.red;
         Gizmos.DrawWireSphere(Pos, _settings.TerrainCheckRadius);
     }
 
-    public bool Killable => _settings.Killable;
+    public bool Killable => _settings.Killable && Alive;
 
     public void Kill()
     {
@@ -76,8 +78,9 @@ public class WormGodSegment : MonoBehaviour, IKillable
 
     public Transform AnchorPoint => _anchorPoint;
 
-    public bool IsInTerrain()
+    public bool IsInTerrain(float fakeGroundY)
     {
+        _fakeGroundY = fakeGroundY;
         if (_didUpdateInTerrainThisFrame)
         {
             return _isInTerrain;
@@ -87,7 +90,7 @@ public class WormGodSegment : MonoBehaviour, IKillable
         int size = Physics.OverlapSphereNonAlloc(Pos, _settings.TerrainCheckRadius, _results,
             _settings.TerrainLayer);
 
-        _isInTerrain = size > 0 || Pos.y < 0;
+        _isInTerrain = size > 0 || Pos.y < fakeGroundY;
 
         return _isInTerrain;
     }

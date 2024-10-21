@@ -1545,7 +1545,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 250182589}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 198}
+  m_LocalPosition: {x: 0, y: 0, z: 28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1553,7 +1553,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 27.033047}
+  m_AnchoredPosition: {x: 0, y: 14.033047}
   m_SizeDelta: {x: 55, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!43 &251707783
@@ -3586,7 +3586,7 @@ Transform:
   m_GameObject: {fileID: 464178838}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.13052596, w: 0.99144495}
-  m_LocalPosition: {x: 159, y: -193, z: 159}
+  m_LocalPosition: {x: 159, y: -203, z: 159}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4343,7 +4343,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Direct wallride with aim
+  m_text: 'Shoulder the wall to wallglide
+
+    Jump to detach'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a8d4841bb8fa5f94892c74a058312752, type: 2}
   m_sharedMaterial: {fileID: 8699704543399544539, guid: a8d4841bb8fa5f94892c74a058312752, type: 2}
@@ -4479,7 +4481,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 35, y: 18}
-  m_SizeDelta: {x: 20, y: 5}
+  m_SizeDelta: {x: 32.76, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!43 &787351469
 Mesh:
@@ -6026,7 +6028,7 @@ Transform:
   m_GameObject: {fileID: 891122653}
   serializedVersion: 2
   m_LocalRotation: {x: -0.18819639, y: 0.28049228, z: -0.21522939, w: 0.9162874}
-  m_LocalPosition: {x: -4, y: 1, z: 123}
+  m_LocalPosition: {x: -4, y: 3, z: 125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7928,13 +7930,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1023597504}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.25660437, y: 0.0000000018626451, z: -0.13052596, w: 0.95766234}
+  m_LocalRotation: {x: -0.12940931, y: 0.017037028, z: -0.1294093, w: 0.982963}
   m_LocalPosition: {x: 0, y: -6, z: 55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -29.438, y: 4.411, z: -16.682}
+  m_LocalEulerAnglesHint: {x: -14.478, y: 3.967, z: -15.504}
 --- !u!1 &1225935246
 GameObject:
   m_ObjectHideFlags: 0
@@ -8690,7 +8692,7 @@ Transform:
   m_GameObject: {fileID: 1284536676}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.13052596, w: 0.99144495}
-  m_LocalPosition: {x: 134, y: -197, z: 181}
+  m_LocalPosition: {x: 134, y: -207, z: 181}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9755,7 +9757,7 @@ Transform:
   m_GameObject: {fileID: 1447581945}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.13052596, w: 0.99144495}
-  m_LocalPosition: {x: 173, y: -193, z: 138}
+  m_LocalPosition: {x: 173, y: -203, z: 138}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10624,7 +10626,7 @@ Transform:
   m_GameObject: {fileID: 1553674211}
   serializedVersion: 2
   m_LocalRotation: {x: -0.12940928, y: 0.017037025, z: -0.12940928, w: 0.98296297}
-  m_LocalPosition: {x: 0, y: 3, z: 85}
+  m_LocalPosition: {x: 0, y: -2, z: 86}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10872,7 +10874,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5818342740534684079, guid: 16995570cc9be844a90ae6efade0a33a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: -5.3962755
       objectReference: {fileID: 0}
     - target: {fileID: 5818342740534684079, guid: 16995570cc9be844a90ae6efade0a33a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12660,7 +12662,7 @@ Transform:
   m_GameObject: {fileID: 1955120487}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: -0.13052596, w: 0.9914449}
-  m_LocalPosition: {x: 223, y: 4.3157825, z: 133}
+  m_LocalPosition: {x: 223, y: -6.080493, z: 133}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

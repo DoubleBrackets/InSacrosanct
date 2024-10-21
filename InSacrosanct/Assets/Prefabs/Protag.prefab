@@ -250,7 +250,7 @@ MonoBehaviour:
   _characterController: {fileID: 6154297845243383366}
   _moveSettings:
     MoveSpeed: 25
-    JumpHeight: 3
+    JumpHeight: 4
     Gravity: -25
     Acceleration: 4
     Friction: 6
@@ -259,6 +259,7 @@ MonoBehaviour:
       serializedVersion: 2
       m_Bits: 64
     GroundSweepOrigin: {fileID: 7409473109909816388}
+    MaxGroundAngle: 65
     SurfRaycastCenter: {fileID: 5488190822765481052}
     SurfCastDist: 3
     SurfMask:

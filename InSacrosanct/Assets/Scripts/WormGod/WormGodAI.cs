@@ -30,11 +30,15 @@ public class WormGodAI : MonoBehaviour
 
         public Vector3 TargetOffset;
 
+        public float FakeGroundY;
+
         [Header("Screen shake")]
 
         public float ShakeMaxRange;
 
         public float ShakeMinRange;
+
+        public float ShakeMultiplier;
     }
 
     [Header("Dependencies")]
@@ -134,7 +138,7 @@ public class WormGodAI : MonoBehaviour
         float closestDist = Vector3.Distance(_head.Pos, _protag.Instance.Pos);
         foreach (WormGodSegment segment in _bodySegments)
         {
-            if (!segment.IsInTerrain())
+            if (!segment.IsInTerrain(_config.FakeGroundY))
             {
                 continue;
             }
@@ -147,7 +151,7 @@ public class WormGodAI : MonoBehaviour
         }
 
         float strength = Mathf.InverseLerp(_config.ShakeMaxRange, _config.ShakeMinRange, closestDist);
-        _protag.Instance.FPCameraEffects.SetWormImpulse(strength);
+        _protag.Instance.FPCameraEffects.SetWormImpulse(strength * _config.ShakeMultiplier);
     }
 
     private void InitializeSegments()
@@ -167,7 +171,7 @@ public class WormGodAI : MonoBehaviour
 
     private void Steering()
     {
-        bool inGround = _head.IsInTerrain();
+        bool inGround = _head.IsInTerrain(_config.FakeGroundY);
         if (inGround)
         {
             Vector3 targetPos = _protag.Instance.Pos + _config.TargetOffset;

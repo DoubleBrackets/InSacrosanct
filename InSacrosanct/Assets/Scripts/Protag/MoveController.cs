@@ -26,6 +26,8 @@ public class MoveController : MonoBehaviour
         public LayerMask GroundMask;
         public Transform GroundSweepOrigin;
 
+        public float MaxGroundAngle;
+
         [Header("Surf")]
 
         public Transform SurfRaycastCenter;
@@ -51,7 +53,6 @@ public class MoveController : MonoBehaviour
 
         public float SurfEnterSpeedRequirement;
         public float SurfMaintainSpeedRequirement;
-
     }
 
     [Header("Dependencies")]
@@ -63,8 +64,10 @@ public class MoveController : MonoBehaviour
 
     [SerializeField]
     private MoveSettings _moveSettings;
-    private float timer;
-    private bool isSurfPlaying;
+
+    [Header("Audio Settings")]
+
+    public float footstepDelay;
 
     private bool IsGrounded => (_characterController.isGrounded || _castGround) && _forceUngroundTimer <= 0f;
     public bool IsSurfing { get; private set; }
@@ -78,6 +81,9 @@ public class MoveController : MonoBehaviour
         get => _velocity;
         set => _velocity = value;
     }
+
+    private float timer;
+    private bool isSurfPlaying;
 
     private Vector3 _velocity;
     private Vector3 _groundNormal;
@@ -95,9 +101,6 @@ public class MoveController : MonoBehaviour
     private bool _wasSurfing;
 
     private float _surfDebounceTimer;
-
-    [Header("Audio Settings")]
-    public float footstepDelay;
 
     private void Awake()
     {
@@ -276,11 +279,12 @@ public class MoveController : MonoBehaviour
             }
         }
 
-        if(IsSurfing && !isSurfPlaying)
+        if (IsSurfing && !isSurfPlaying)
         {
             AkSoundEngine.PostEvent("playWallslide", gameObject);
             isSurfPlaying = true;
-        } else if (!IsSurfing && isSurfPlaying)
+        }
+        else if (!IsSurfing && isSurfPlaying)
         {
             AkSoundEngine.PostEvent("stopWallslide", gameObject);
         }
@@ -321,6 +325,11 @@ public class MoveController : MonoBehaviour
         var ray = new Ray(start, Vector3.down);
 
         bool hit = Physics.Raycast(ray, out RaycastHit hitInfo, _moveSettings.SweepDistance, _moveSettings.GroundMask);
+
+        if (Vector3.Angle(hitInfo.normal, Vector3.up) > _moveSettings.MaxGroundAngle)
+        {
+            hit = false;
+        }
 
         _groundNormal = hit ? hitInfo.normal : Vector3.up;
         _groundHitPoint = hit ? hitInfo.point : start + Vector3.down * _moveSettings.SweepDistance;
