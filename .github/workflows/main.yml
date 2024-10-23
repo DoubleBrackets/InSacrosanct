@@ -6,7 +6,7 @@ env:
   PROJ_NAME: InSacrosanct
   BUILD_NAME_PREFIX: Build
   BUILD_DIR: build
-  BUTLER_LINK: https://broth.itch.zone/butler/windows-amd64/LATEST/archive/default
+  BUTLER_LINK: https://broth.itch.zone/butler/darwin-amd64/LATEST/archive/default
   ITCH_GAME_NAME: doublebrackets/in-sacrosanct
 
 
@@ -25,7 +25,7 @@ on:
 
 jobs:
   UnityBuilds:
-    runs-on: windows-latest # WWise does not support linux build env
+    runs-on: macos-latest # WWise does not support linux build env
     strategy:
       matrix:
         targetPlatform:
