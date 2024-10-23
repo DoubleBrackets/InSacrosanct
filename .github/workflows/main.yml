@@ -31,8 +31,8 @@ jobs:
         targetPlatform:
           # - WebGL WWise does not support webgl
           - StandaloneWindows64
-          - StandaloneOSX
-          - StandaloneLinux64
+          # - StandaloneOSX
+          # - StandaloneLinux64
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
