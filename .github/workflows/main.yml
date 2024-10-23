@@ -6,7 +6,7 @@ env:
   PROJ_NAME: InSacrosanct
   BUILD_NAME_PREFIX: Build
   BUILD_DIR: build
-  BUTLER_LINK: https://broth.itch.zone/butler/darwin-amd64/LATEST/archive/default
+  BUTLER_LINK: https://broth.itch.zone/butler/windows-amd64/LATEST/archive/default
   ITCH_GAME_NAME: doublebrackets/in-sacrosanct
 
 
@@ -25,7 +25,7 @@ on:
 
 jobs:
   UnityBuilds:
-    runs-on: macos-latest # WWise does not support linux build env
+    runs-on: windows-latest # WWise does not support linux build env
     strategy:
       matrix:
         targetPlatform:
@@ -35,10 +35,7 @@ jobs:
           - StandaloneLinux64
     steps:
       - name: Delete huge unnecessary tools folder
-        run: rm -rf /opt/hostedtoolcache
-
-      - name: Rosetta 2
-        run: softwareupdate --install-rosetta --agree-to-license
+        run: rd -r /opt/hostedtoolcache
         
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -94,10 +91,8 @@ jobs:
       - name: Download Butler
         run: |
           curl -L -o butler.zip ${{env.BUTLER_LINK}}
-          unzip butler.zip
-          chmod +x butler
-          ./butler -V
-          tree -L 4
+          Expand-Archive butler.zip
+          butler.exe -V
 
       - name: Push Build to Butler
         run: |
