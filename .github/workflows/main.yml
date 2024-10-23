@@ -90,6 +90,8 @@ jobs:
         run: |
           curl -L -o butler.zip ${{env.BUTLER_LINK}}
           Expand-Archive butler.zip
+          ls
+          cd butler
           butler.exe -V
 
       - name: Push Build to Butler
