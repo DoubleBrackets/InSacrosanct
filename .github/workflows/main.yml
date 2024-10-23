@@ -1,5 +1,8 @@
 name: Unity-Builder
-run-name: ${{ github.actor }} is building ${{ github.ref_name }}
+
+concurrency:
+  group: ci-${{ github.actor }}-${{ github.ref }}-runner
+  cancel-in-progress: true
 
 env:
   PROJ_DIR: InSacrosanct
@@ -7,7 +10,7 @@ env:
   BUILD_NAME_PREFIX: Build
   BUILD_DIR: build
   BUTLER_LINK: https://broth.itch.zone/butler/windows-amd64/LATEST/archive/default
-  ITCH_GAME_NAME: doublebrackets/in-sacrosanct
+  ITCH_GAME_NAME: ronnocj/in-sacrosanct
 
 
 on:
@@ -31,12 +34,9 @@ jobs:
         targetPlatform:
           # - WebGL WWise does not support webgl
           - StandaloneWindows64
-          - StandaloneOSX
-          - StandaloneLinux64
+          # - StandaloneOSX
+          # - StandaloneLinux64
     steps:
-      - name: Delete huge unnecessary tools folder
-        run: rm -rf /opt/hostedtoolcache
-        
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
@@ -44,14 +44,14 @@ jobs:
         
       - name: Git Semantic Version
         uses: paulhatch/semantic-version@v5.4.0
+        id: semantic_version
         with:
-          # Optional path to check for changes. If any changes are detected in the path the
-          # 'changed' output will true. Enter multiple paths separated by spaces.
-          change_path: ${{ env.PROJ_DIR }}
           # Named version, will be used as suffix for name version tag
           namespace: ${{ env.PROJ_NAME }}
           # If enabled, diagnostic information will be added to the action output.
           debug: true
+          # Small project, automatically bump version
+          bump_each_commit: true
 
       - name: Library Cache
         uses: actions/cache@v3
@@ -84,20 +84,21 @@ jobs:
 
       # Zip before uploading to itch isn't required, but lower upload size
       - name: Zip Build
-        uses: montudor/action-zip@v1
-        with:
-          args: zip -qq -r ${{env.BUILD_DIR}}/${{env.BUILD_NAME_PREFIX}}-${{ matrix.targetPlatform }}-${{steps.git_semantic_version.outputs.version}}.zip ${{env.BUILD_DIR}}/${{ matrix.targetPlatform }}
+        run: Compress-Archive -Path ${{env.BUILD_DIR}}/${{ matrix.targetPlatform }} -Destination ${{env.BUILD_DIR}}/${{env.BUILD_NAME_PREFIX}}-${{ matrix.targetPlatform }}.zip 
 
       - name: Download Butler
         run: |
           curl -L -o butler.zip ${{env.BUTLER_LINK}}
-          unzip butler.zip
-          chmod +x butler
-          ./butler -V
-          tree -L 4
+          Expand-Archive butler.zip
+          ls
+          cd butler
+          ls
+          ./butler.exe -V
 
       - name: Push Build to Butler
         run: |
-          ./butler push ${{env.BUILD_DIR}}/${{env.BUILD_NAME_PREFIX}}-${{ matrix.targetPlatform }}.zip ${{env.ITCH_GAME_NAME}}:${{ matrix.targetPlatform }}
+          ls
+          tree
+          ./butler/butler.exe push ${{env.BUILD_DIR}}/${{env.BUILD_NAME_PREFIX}}-${{ matrix.targetPlatform }}.zip ${{env.ITCH_GAME_NAME}}:${{ matrix.targetPlatform }} --userversion ${{steps.semantic_version.outputs.version}} 
         env:
           BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
