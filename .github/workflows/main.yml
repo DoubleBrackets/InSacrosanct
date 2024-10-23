@@ -6,7 +6,7 @@ env:
   PROJ_NAME: InSacrosanct
   BUILD_NAME_PREFIX: Build
   BUILD_DIR: build
-  BUTLER_LINK: https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default
+  BUTLER_LINK: https://broth.itch.zone/butler/windows-amd64/LATEST/archive/default
   ITCH_GAME_NAME: doublebrackets/in-sacrosanct
 
 
@@ -25,11 +25,11 @@ on:
 
 jobs:
   UnityBuilds:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest # WWise does not support linux build env
     strategy:
       matrix:
         targetPlatform:
-          - WebGL
+          # - WebGL WWise does not support webgl
           - StandaloneWindows64
           - StandaloneOSX
           - StandaloneLinux64
