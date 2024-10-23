@@ -33,8 +33,6 @@ jobs:
           - StandaloneWindows64
           # - StandaloneOSX
           # - StandaloneLinux64
-    env:
-      Build_Zip_Path: ${{env.BUILD_DIR}}/${{env.BUILD_NAME_PREFIX}}-${{ matrix.targetPlatform }}-${{steps.git_semantic_version.outputs.version}}.zip
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -83,7 +81,7 @@ jobs:
 
       # Zip before uploading to itch isn't required, but lower upload size
       - name: Zip Build
-        run: Compress-Archive -Path ${{env.BUILD_ZIP_PATH}} -Destination ${{env.BUILD_DIR}}/${{ matrix.targetPlatform }}
+        run: Compress-Archive -Path ${{env.BUILD_DIR}}/${{env.BUILD_NAME_PREFIX}}-${{ matrix.targetPlatform }}-${{steps.git_semantic_version.outputs.version}}.zip -Destination ${{env.BUILD_DIR}}/${{ matrix.targetPlatform }}
 
       - name: Download Butler
         run: |
@@ -93,6 +91,6 @@ jobs:
 
       - name: Push Build to Butler
         run: |
-          ./butler push ${{env.BUILD_ZIP_PATH}} ${{env.ITCH_GAME_NAME}}:${{ matrix.targetPlatform }}
+          ./butler push ${{env.BUILD_DIR}}/${{env.BUILD_NAME_PREFIX}}-${{ matrix.targetPlatform }}-${{steps.git_semantic_version.outputs.version}}.zip ${{env.ITCH_GAME_NAME}}:${{ matrix.targetPlatform }}
         env:
           BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
