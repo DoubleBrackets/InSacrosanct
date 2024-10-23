@@ -34,9 +34,6 @@ jobs:
           - StandaloneOSX
           - StandaloneLinux64
     steps:
-      - name: Delete huge unnecessary tools folder
-        run: rd -r /opt/hostedtoolcache
-        
       - name: Checkout Repository
         uses: actions/checkout@v4
         with:
