@@ -1,0 +1,103 @@
+name: Unity-Builder
+run-name: ${{ github.actor }} is building ${{ github.ref_name }}
+
+env:
+  PROJ_DIR: InSacrosanct
+  PROJ_NAME: InSacrosanct
+  BUILD_NAME_PREFIX: Build
+  BUILD_DIR: build
+  BUTLER_LINK: https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default
+  ITCH_GAME_NAME: doublebrackets/in-sacrosanct
+
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      # Only build when these are changed by the push
+      # Actions doesn't support env. variables in this section...
+      # Manually type in the project directory raw name to replace 'PROJ_DIR' in the following 3 lines
+      - "InSacrosanct/Assets/**"
+      - "InSacrosanct/Packages/**"
+      - "InSacrosanct/ProjectSettings/**"
+  workflow_dispatch:
+
+jobs:
+  UnityBuilds:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        targetPlatform:
+          - WebGL
+          - StandaloneWindows64
+          - StandaloneOSX
+          - StandaloneLinux64
+    steps:
+      - name: Delete huge unnecessary tools folder
+        run: rm -rf /opt/hostedtoolcache
+        
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+        
+      - name: Git Semantic Version
+        uses: paulhatch/semantic-version@v5.4.0
+        with:
+          # Optional path to check for changes. If any changes are detected in the path the
+          # 'changed' output will true. Enter multiple paths separated by spaces.
+          change_path: ${{ env.PROJ_DIR }}
+          # Named version, will be used as suffix for name version tag
+          namespace: ${{ env.PROJ_NAME }}
+          # If enabled, diagnostic information will be added to the action output.
+          debug: true
+
+      - name: Library Cache
+        uses: actions/cache@v3
+        with:
+          path: ${{env.PROJ_DIR}}/Library
+          key: Library-${{ env.PROJ_NAME }}-${{ matrix.targetPlatform }}-${{ hashFiles('${{env.PROJ_DIR}}/Assets/**', '${{env.PROJ_DIR}}/Packages/**', '${{env.PROJ_DIR}}/ProjectSettings/**') }}
+          restore-keys: |
+            Library-${{ env.PROJ_NAME }}-${{ matrix.targetPlatform }}-
+            Library-${{ env.PROJ_NAME }}-
+
+      - name: Build Unity Project
+        uses: game-ci/unity-builder@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          targetPlatform: ${{ matrix.targetPlatform }}
+          unityVersion: auto
+          projectPath: ${{env.PROJ_DIR}}
+          buildsPath: ${{env.BUILD_PATH}}
+          # This is the name of the runnable file (e.g the .exe file)
+          buildName: ${{env.PROJ_NAME}}
+
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{env.BUILD_NAME_PREFIX}}-${{ matrix.targetPlatform }}
+          path: ${{env.BUILD_DIR}}/${{ matrix.targetPlatform }}
+
+      # Zip before uploading to itch isn't required, but lower upload size
+      - name: Zip Build
+        uses: montudor/action-zip@v1
+        with:
+          args: zip -qq -r ${{env.BUILD_DIR}}/${{env.BUILD_NAME_PREFIX}}-${{ matrix.targetPlatform }}-${{steps.git_semantic_version.outputs.version}}.zip ${{env.BUILD_DIR}}/${{ matrix.targetPlatform }}
+
+      - name: Download Butler
+        run: |
+          curl -L -o butler.zip ${{env.BUTLER_LINK}}
+          unzip butler.zip
+          chmod +x butler
+          ./butler -V
+          tree -L 4
+
+      - name: Push Build to Butler
+        run: |
+          ./butler push ${{env.BUILD_DIR}}/${{env.BUILD_NAME_PREFIX}}-${{ matrix.targetPlatform }}.zip ${{env.ITCH_GAME_NAME}}:${{ matrix.targetPlatform }}
+        env:
+          BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
