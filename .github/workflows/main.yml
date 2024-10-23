@@ -36,6 +36,9 @@ jobs:
     steps:
       - name: Delete huge unnecessary tools folder
         run: rm -rf /opt/hostedtoolcache
+
+      - name: Rosetta 2
+        run: softwareupdate --install-rosetta --agree-to-license
         
       - name: Checkout Repository
         uses: actions/checkout@v4
