@@ -92,6 +92,7 @@ jobs:
           Expand-Archive butler.zip
           ls
           cd butler
+          ls
           butler.exe -V
 
       - name: Push Build to Butler
