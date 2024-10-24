@@ -97,6 +97,7 @@ jobs:
 
       - name: Push Build to Butler
         run: |
+          ls
           ./butler.exe push ${{env.BUILD_DIR}}/${{env.BUILD_NAME_PREFIX}}-${{ matrix.targetPlatform }}.zip ${{env.ITCH_GAME_NAME}}:${{ matrix.targetPlatform }} --userversion ${{steps.semantic_version.outputs.version}} 
         env:
           BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
