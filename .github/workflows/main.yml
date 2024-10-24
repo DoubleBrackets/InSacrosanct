@@ -93,7 +93,7 @@ jobs:
           ls
           cd butler
           ls
-          butler.exe -V
+          ./butler.exe -V
 
       - name: Push Build to Butler
         run: |
