@@ -158,7 +158,6 @@ public class Sword : GearBase
         vel += -looking * _recoilVelocity;
 
         Protag.MoveController.Velocity = vel;
-        _sliceCooldownTimer = _sliceCooldown;
 
         await UniTask.Delay((int)(_animationDuration * 1000));
     }

@@ -252,8 +252,8 @@ MonoBehaviour:
     MoveSpeed: 25
     JumpHeight: 4
     Gravity: -25
-    Acceleration: 4
-    Friction: 6
+    Acceleration: 3
+    Friction: 4
     SweepDistance: 1.23
     GroundMask:
       serializedVersion: 2
@@ -267,12 +267,12 @@ MonoBehaviour:
       m_Bits: 64
     SurfSurfaceAngleRange: 30
     SurfGravity: -25
-    SurfInitiateAngleRange: 65
+    SurfInitiateAngleRange: 45
     SurfSteeringSpeed: 70
-    SurfJumpHeight: 4
+    SurfJumpHeight: 3
     SurfStickForce: 15
     SurfEjectForce: 8
-    SurfEjectForceForward: 13
+    SurfEjectForceForward: 11
     SurfDebounceTime: 0.5
     SurfEnterSpeedRequirement: 17
     SurfMaintainSpeedRequirement: 8

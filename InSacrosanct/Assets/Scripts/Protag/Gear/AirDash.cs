@@ -9,6 +9,9 @@ public class AirDash : GearBase
     private float _dashCooldown;
 
     [SerializeField]
+    private float _retainedVelocityRatio;
+
+    [SerializeField]
     private GameObject _visuals;
 
     [SerializeField]
@@ -50,7 +53,9 @@ public class AirDash : GearBase
                 Protag.MoveController.ForceUnground();
 
                 Vector3 oldVelocity = Protag.MoveController.Velocity;
-                Vector3 newVelocity = direction * _dashSpeed;
+
+                float dot = Mathf.Max(0, Vector3.Dot(oldVelocity.normalized, direction));
+                Vector3 newVelocity = direction * (_dashSpeed + _retainedVelocityRatio * dot * oldVelocity.magnitude);
 
                 Protag.MoveController.Velocity = newVelocity;
                 _dashTimer = _dashCooldown;

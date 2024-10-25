@@ -4992,7 +4992,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dashSpeed: 45
-  _dashCooldown: 2
+  _dashCooldown: 2.5
+  _retainedVelocityRatio: 0.1
   _visuals: {fileID: 1425400778347290909}
   _animator: {fileID: 5049645123828039997}
 --- !u!1001 &2236428251561565260

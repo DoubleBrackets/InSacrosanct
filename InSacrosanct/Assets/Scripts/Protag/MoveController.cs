@@ -186,7 +186,10 @@ public class MoveController : MonoBehaviour
 
         // Wallsurfing
         bool surfAim = Mathf.Abs(Vector3.Angle(_surfNormal, fpCamera.CameraForward) - 90f) <
-                       _moveSettings.SurfInitiateAngleRange / 2f;
+                       _moveSettings.SurfInitiateAngleRange;
+
+        bool matchesVelocity = Mathf.Abs(Vector3.Angle(_surfNormal, _velocity.normalized) - 90f) <
+                               _moveSettings.SurfInitiateAngleRange;
 
         IsSurfing = false;
         bool sufficientSpeed = _velocity.magnitude >
@@ -194,9 +197,18 @@ public class MoveController : MonoBehaviour
                                    ? _moveSettings.SurfMaintainSpeedRequirement
                                    : _moveSettings.SurfEnterSpeedRequirement);
 
-        if (!IsGrounded && _surfContact && surfAim && sufficientSpeed && _surfDebounceTimer <= 0f)
+        if (!IsGrounded && _surfContact && matchesVelocity && surfAim && sufficientSpeed && _surfDebounceTimer <= 0f)
         {
-            Vector3 desiredDir = Vector3.ProjectOnPlane(fpCamera.CameraForward, _surfNormal).normalized;
+            Vector3 aim = fpCamera.CameraForward;
+            float lookDotWithVel = Vector3.Dot(aim, _velocity.normalized);
+
+            // Allow going backwards
+            if (lookDotWithVel < 0f)
+            {
+                aim *= -1;
+            }
+
+            Vector3 desiredDir = Vector3.ProjectOnPlane(aim, _surfNormal).normalized;
             Vector3 currentDir = Vector3.ProjectOnPlane(_velocity, _surfNormal).normalized;
 
             Vector3 newDir = Vector3.RotateTowards(currentDir, desiredDir,
