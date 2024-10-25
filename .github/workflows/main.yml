@@ -10,7 +10,7 @@ env:
   BUILD_NAME_PREFIX: Build
   BUILD_DIR: build
   BUTLER_LINK: https://broth.itch.zone/butler/windows-amd64/LATEST/archive/default
-  ITCH_GAME_NAME: doublebrackets/in-sacrosanct
+  ITCH_GAME_NAME: ronnocj/in-sacrosanct
 
 
 on:
